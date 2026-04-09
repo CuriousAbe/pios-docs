@@ -7,6 +7,8 @@ target_keywords:
   - AI powered knowledge management
   - obsidian automation scripts
 meta_description: "Turn your Obsidian vault into an AI-powered knowledge system. Learn how to connect data pipelines, run AI agents, and automate your personal knowledge management."
+description: "Turn your Obsidian vault into an AI-powered knowledge system. Learn how to connect data pipelines, run AI agents, and automate your personal knowledge management."
+date: 2026-04-07
 created: 2026-04-07
 word_count: ~2600
 type: seo_article

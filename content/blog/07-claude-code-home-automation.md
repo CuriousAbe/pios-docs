@@ -1,5 +1,6 @@
 ---
 title: "Using Claude Code for Home Automation: A Personal AI Approach"
+date: 2026-04-07
 slug: claude-code-home-automation-personal-ai
 target_keywords:
   - claude code automation
@@ -7,6 +8,7 @@ target_keywords:
   - claude code scheduled tasks
   - personal AI automation examples
 meta_description: "Real examples of using Claude Code to automate your personal life: health tracking, message digests, photo diaries, and task management — all running locally."
+description: "Real examples of using Claude Code to automate your personal life: health tracking, message digests, photo diaries, and task management — all running locally."
 created: 2026-04-07
 word_count: ~2200
 type: seo_article

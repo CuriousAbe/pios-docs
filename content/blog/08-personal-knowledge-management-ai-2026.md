@@ -1,5 +1,6 @@
 ---
 title: "Personal Knowledge Management with AI in 2026: Beyond Note-Taking"
+date: 2026-04-07
 slug: personal-knowledge-management-ai-2026
 target_keywords:
   - personal knowledge management AI
@@ -8,6 +9,7 @@ target_keywords:
   - smart knowledge base AI
   - second brain AI
 meta_description: "Personal knowledge management has evolved beyond note-taking. Learn how AI agents can organize, connect, and activate your knowledge automatically in 2026."
+description: "Personal knowledge management has evolved beyond note-taking. Learn how AI agents can organize, connect, and activate your knowledge automatically in 2026."
 created: 2026-04-07
 word_count: ~2300
 type: seo_article

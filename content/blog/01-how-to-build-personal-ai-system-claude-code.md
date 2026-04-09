@@ -7,6 +7,8 @@ target_keywords:
   - personal AI system tutorial
   - build your own AI assistant
 meta_description: "Learn how to build a personal AI system using Claude Code and Obsidian. This step-by-step guide covers architecture, data pipelines, and autonomous agent setup."
+description: "Learn how to build a personal AI system using Claude Code and Obsidian. This step-by-step guide covers architecture, data pipelines, and autonomous agent setup."
+date: 2026-04-07
 created: 2026-04-07
 word_count: ~2800
 type: seo_article

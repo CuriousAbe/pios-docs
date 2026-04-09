@@ -1,423 +1,188 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>Build an AI Task Management System That Actually Works (Developer Guide) | PiOS — Personal Intelligence Operating System</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Build an AI Task Management System That Actually Works
-Every productivity app promises to organize your life. Most end up as another inbox you ignore. The fundamental problem isn&rsquo;t the UI or the features — it&rsquo;s that these systems are passive. They store tasks but don&rsquo;t help you manage them.
-What if your task system could:
-
-Automatically classify and prioritize new tasks based on your projects and goals
-Detect when a blocked task becomes unblocked
-Surface the right task at the right time based on your energy, schedule, and context
-Archive completed work and create follow-up tasks
-
-This guide shows you how to build exactly that using AI agents, Markdown files, and a simple but powerful architecture.">
-    <meta name="generator" content="Hugo 0.160.1">
-    
-    
-    
-      <meta name="robots" content="index, follow">
-    
-    
-
-    
-<link rel="stylesheet" href="/ananke/css/main.min.efe4d852f731d5d1fbb87718387202a97aafd768cdcdaed0662bbe6982e91824.css" >
-
-
-
-
-    
-
-
-    
-      
-
-    
-
-    
-
-    
-      <link rel="canonical" href="https://pios-docs.github.io/blog/ai-task-management-system-tutorial/">
-    
-
-    
-    
-    <meta property="og:url" content="https://pios-docs.github.io/blog/ai-task-management-system-tutorial/">
-  <meta property="og:site_name" content="PiOS — Personal Intelligence Operating System">
-  <meta property="og:title" content="Build an AI Task Management System That Actually Works (Developer Guide)">
-  <meta property="og:description" content="Build an AI Task Management System That Actually Works Every productivity app promises to organize your life. Most end up as another inbox you ignore. The fundamental problem isn’t the UI or the features — it’s that these systems are passive. They store tasks but don’t help you manage them.
-What if your task system could:
-Automatically classify and prioritize new tasks based on your projects and goals Detect when a blocked task becomes unblocked Surface the right task at the right time based on your energy, schedule, and context Archive completed work and create follow-up tasks This guide shows you how to build exactly that using AI agents, Markdown files, and a simple but powerful architecture.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="blog">
-
-  <meta itemprop="name" content="Build an AI Task Management System That Actually Works (Developer Guide)">
-  <meta itemprop="description" content="Build an AI Task Management System That Actually Works Every productivity app promises to organize your life. Most end up as another inbox you ignore. The fundamental problem isn’t the UI or the features — it’s that these systems are passive. They store tasks but don’t help you manage them.
-What if your task system could:
-Automatically classify and prioritize new tasks based on your projects and goals Detect when a blocked task becomes unblocked Surface the right task at the right time based on your energy, schedule, and context Archive completed work and create follow-up tasks This guide shows you how to build exactly that using AI agents, Markdown files, and a simple but powerful architecture.">
-  <meta itemprop="wordCount" content="1275">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Build an AI Task Management System That Actually Works (Developer Guide)">
-  <meta name="twitter:description" content="Build an AI Task Management System That Actually Works Every productivity app promises to organize your life. Most end up as another inbox you ignore. The fundamental problem isn’t the UI or the features — it’s that these systems are passive. They store tasks but don’t help you manage them.
-What if your task system could:
-Automatically classify and prioritize new tasks based on your projects and goals Detect when a blocked task becomes unblocked Surface the right task at the right time based on your energy, schedule, and context Archive completed work and create follow-up tasks This guide shows you how to build exactly that using AI agents, Markdown files, and a simple but powerful architecture.">
-
-      
-      
-    
-	
-  </head><body class="ma0 avenir bg-near-white production is-page is-page page-06-ai-task-management-system-tutorial">
-    
-   
-  
-
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l center items-center justify-between">
-    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
-      
-        PiOS — Personal Intelligence Operating System
-      
-    </a>
-    <div class="flex-l items-center">
-      
-
-      
-      <div class="ananke-socials"></div>
-
-    </div>
-  </div>
-</nav>
-
-    </div>
-  </header>
-
-
-
-    <main class="pb7" role="main">
-      
-  
-
-  <article class="page-06-ai-task-management-system-tutorial flex-l mw7 center ph3 flex-wrap justify-between">
-    <header class="mt4 w-100">
-      <aside class="instapaper_ignoref b helvetica tracked ttu">
-          
-        Blogs
-      </aside><div id="sharing" class="mt3 ananke-socials"></div>
-<h1 class="f1 athelas mt3 mb1">Build an AI Task Management System That Actually Works (Developer Guide)</h1>
-      
-      
-      
-
-      
-      
-    </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-100-l"><h1 id="build-an-ai-task-management-system-that-actually-works">Build an AI Task Management System That Actually Works</h1>
-<p>Every productivity app promises to organize your life. Most end up as another inbox you ignore. The fundamental problem isn&rsquo;t the UI or the features — it&rsquo;s that these systems are passive. They store tasks but don&rsquo;t help you manage them.</p>
-<p>What if your task system could:</p>
-<ul>
-<li>Automatically classify and prioritize new tasks based on your projects and goals</li>
-<li>Detect when a blocked task becomes unblocked</li>
-<li>Surface the right task at the right time based on your energy, schedule, and context</li>
-<li>Archive completed work and create follow-up tasks</li>
-</ul>
-<p>This guide shows you how to build exactly that using AI agents, Markdown files, and a simple but powerful architecture.</p>
-<h2 id="the-card-based-architecture">The Card-Based Architecture</h2>
-<p>Forget databases. We use plain Markdown files as &ldquo;task cards&rdquo; — one file per task, organized in directories that represent states.</p>
-<pre tabindex="0"><code>Cards/
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>Build an AI Task Management System That Actually Works (Developer Guide) | PiOS — Personal Intelligence Operating System</title><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=description content="Learn how to build an AI-powered task management system using Markdown cards, automated triage, and Claude. Includes real code examples and architecture decisions."><meta name=generator content="Hugo 0.160.1"><meta name=robots content="index, follow"><link rel=stylesheet href=/ananke/css/main.min.efe4d852f731d5d1fbb87718387202a97aafd768cdcdaed0662bbe6982e91824.css><link rel=canonical href=https://pios-docs.github.io/blog/ai-task-management-system-tutorial/><meta property="og:url" content="https://pios-docs.github.io/blog/ai-task-management-system-tutorial/"><meta property="og:site_name" content="PiOS — Personal Intelligence Operating System"><meta property="og:title" content="Build an AI Task Management System That Actually Works (Developer Guide)"><meta property="og:description" content="Learn how to build an AI-powered task management system using Markdown cards, automated triage, and Claude. Includes real code examples and architecture decisions."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="blog"><meta property="article:published_time" content="2026-04-07T00:00:00+00:00"><meta property="article:modified_time" content="2026-04-07T00:00:00+00:00"><meta itemprop=name content="Build an AI Task Management System That Actually Works (Developer Guide)"><meta itemprop=description content="Learn how to build an AI-powered task management system using Markdown cards, automated triage, and Claude. Includes real code examples and architecture decisions."><meta itemprop=datePublished content="2026-04-07T00:00:00+00:00"><meta itemprop=dateModified content="2026-04-07T00:00:00+00:00"><meta itemprop=wordCount content="1275"><meta name=twitter:card content="summary"><meta name=twitter:title content="Build an AI Task Management System That Actually Works (Developer Guide)"><meta name=twitter:description content="Learn how to build an AI-powered task management system using Markdown cards, automated triage, and Claude. Includes real code examples and architecture decisions."></head><body class="ma0 avenir bg-near-white production is-page is-page page-06-ai-task-management-system-tutorial"><header><div class=bg-black><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l center items-center justify-between"><a href=/ class="f3 fw2 hover-white white-90 dib no-underline">PiOS — Personal Intelligence Operating System</a><div class="flex-l items-center"><div class=ananke-socials></div></div></div></nav></div></header><main class=pb7 role=main><article class="page-06-ai-task-management-system-tutorial flex-l mw7 center ph3 flex-wrap justify-between"><header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked ttu">Blogs</aside><div id=sharing class="mt3 ananke-socials"></div><h1 class="f1 athelas mt3 mb1">Build an AI Task Management System That Actually Works (Developer Guide)</h1><time class="f6 mv4 dib tracked" datetime=2026-04-07T00:00:00Z>April 7, 2026</time></header><div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-100-l"><h1 id=build-an-ai-task-management-system-that-actually-works>Build an AI Task Management System That Actually Works</h1><p>Every productivity app promises to organize your life. Most end up as another inbox you ignore. The fundamental problem isn&rsquo;t the UI or the features — it&rsquo;s that these systems are passive. They store tasks but don&rsquo;t help you manage them.</p><p>What if your task system could:</p><ul><li>Automatically classify and prioritize new tasks based on your projects and goals</li><li>Detect when a blocked task becomes unblocked</li><li>Surface the right task at the right time based on your energy, schedule, and context</li><li>Archive completed work and create follow-up tasks</li></ul><p>This guide shows you how to build exactly that using AI agents, Markdown files, and a simple but powerful architecture.</p><h2 id=the-card-based-architecture>The Card-Based Architecture</h2><p>Forget databases. We use plain Markdown files as &ldquo;task cards&rdquo; — one file per task, organized in directories that represent states.</p><pre tabindex=0><code>Cards/
 ├── inbox/      # New items, not yet triaged
 ├── active/     # Currently being worked on
 └── archive/    # Completed or abandoned
-</code></pre><p>Each card has YAML frontmatter for metadata:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>type: task
-</span></span><span style="display:flex;"><span>status: active
-</span></span><span style="display:flex;"><span>priority: 2
-</span></span><span style="display:flex;"><span>parent: home-renovation
-</span></span><span style="display:flex;"><span>created: 2026-04-07
-</span></span><span style="display:flex;"><span>energy: 0.8
-</span></span><span style="display:flex;"><span>blocked_on:
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span># Research smart home platforms
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Compare HomeKit, Home Assistant, and Google Home for a new apartment.
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Context
-</span></span></span><span style="display:flex;"><span>Moving to a new apartment in May. Need to decide on smart home platform
-</span></span><span style="display:flex;"><span>before electrician does the wiring (deadline: April 20).
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Acceptance Criteria
-</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">- [ ]</span> Compare at least 3 platforms on: cost, device support, automation
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">- [ ]</span> Assess compatibility with existing Philips Hue and Aqara devices
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">- [ ]</span> Recommendation with reasoning
-</span></span></code></pre></div><p><strong>Why Markdown files instead of a database?</strong></p>
-<ol>
-<li><strong>Human-readable</strong>: Open the folder in any text editor or Obsidian</li>
-<li><strong>AI-friendly</strong>: LLMs read Markdown natively — no serialization needed</li>
-<li><strong>Git-trackable</strong>: Full history of every change to every task</li>
-<li><strong>Tool-agnostic</strong>: No lock-in to any specific app or framework</li>
-<li><strong>Grep-able</strong>: <code>grep -r &quot;blocked_on:&quot; Cards/active/</code> instantly shows all blocked tasks</li>
-</ol>
-<h2 id="the-frontmatter-schema">The Frontmatter Schema</h2>
-<p>Every task card has these fields:</p>
-<table>
-  <thead>
-      <tr>
-          <th>Field</th>
-          <th>Type</th>
-          <th>Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>type</code></td>
-          <td><code>task</code> or <code>project</code></td>
-          <td>Projects contain tasks; tasks are executable</td>
-      </tr>
-      <tr>
-          <td><code>status</code></td>
-          <td><code>inbox</code>, <code>active</code>, <code>done</code></td>
-          <td>Current state</td>
-      </tr>
-      <tr>
-          <td><code>priority</code></td>
-          <td>1, 2, or 3</td>
-          <td>P1 = urgent, P2 = important, P3 = normal</td>
-      </tr>
-      <tr>
-          <td><code>parent</code></td>
-          <td>string</td>
-          <td>Filename of parent project (empty for top-level)</td>
-      </tr>
-      <tr>
-          <td><code>created</code></td>
-          <td>date</td>
-          <td>When this card was created</td>
-      </tr>
-      <tr>
-          <td><code>energy</code></td>
-          <td>0.0–1.0</td>
-          <td>Decay factor — stale tasks get deprioritized</td>
-      </tr>
-      <tr>
-          <td><code>blocked_on</code></td>
-          <td>string</td>
-          <td>What&rsquo;s preventing progress (empty = ready to work)</td>
-      </tr>
-  </tbody>
-</table>
-<p>The <code>blocked_on</code> field is the secret weapon. Instead of a binary &ldquo;done/not done&rdquo; state, tasks can be explicitly blocked:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">blocked_on</span>: <span style="color:#ae81ff">abe-action         </span> <span style="color:#75715e"># Waiting for human decision</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">blocked_on</span>: <span style="color:#ae81ff">contractor-quote   </span> <span style="color:#75715e"># Waiting for external party</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">blocked_on</span>: <span style="color:#ae81ff">api-key-needed     </span> <span style="color:#75715e"># Missing resource</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">blocked_on: verify-after</span>: <span style="color:#e6db74">2026-04-10</span> <span style="color:#ae81ff">14</span>:<span style="color:#ae81ff">00</span>  <span style="color:#75715e"># Delayed verification</span>
-</span></span></code></pre></div><h2 id="building-the-ai-triage-agent">Building the AI Triage Agent</h2>
-<p>The triage agent processes the inbox: classifies, prioritizes, and routes new cards.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> anthropic
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> yaml
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>CARDS_DIR <span style="color:#f92672">=</span> Path<span style="color:#f92672">.</span>home() <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;vault&#34;</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;Cards&#34;</span>
-</span></span><span style="display:flex;"><span>client <span style="color:#f92672">=</span> anthropic<span style="color:#f92672">.</span>Anthropic()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">triage_inbox</span>():
-</span></span><span style="display:flex;"><span>    inbox <span style="color:#f92672">=</span> CARDS_DIR <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;inbox&#34;</span>
-</span></span><span style="display:flex;"><span>    active <span style="color:#f92672">=</span> CARDS_DIR <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;active&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Load existing projects for context</span>
-</span></span><span style="display:flex;"><span>    projects <span style="color:#f92672">=</span> load_active_projects()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> card_path <span style="color:#f92672">in</span> inbox<span style="color:#f92672">.</span>glob(<span style="color:#e6db74">&#34;*.md&#34;</span>):
-</span></span><span style="display:flex;"><span>        content <span style="color:#f92672">=</span> card_path<span style="color:#f92672">.</span>read_text()
-</span></span><span style="display:flex;"><span>        frontmatter, body <span style="color:#f92672">=</span> parse_card(content)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Ask AI to classify</span>
-</span></span><span style="display:flex;"><span>        response <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>messages<span style="color:#f92672">.</span>create(
-</span></span><span style="display:flex;"><span>            model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;claude-sonnet-4-6&#34;</span>,
-</span></span><span style="display:flex;"><span>            max_tokens<span style="color:#f92672">=</span><span style="color:#ae81ff">500</span>,
-</span></span><span style="display:flex;"><span>            messages<span style="color:#f92672">=</span>[{
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;content&#34;</span>: <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#34;&#34;Classify this task card.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Active projects:
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{</span>format_projects(projects)<span style="color:#e6db74">}</span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">New card:
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{</span>content<span style="color:#e6db74">}</span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Respond in YAML:
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">priority: 1|2|3
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">parent: &lt;matching project filename or empty&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">blocked_on: &lt;if it needs human action or external dependency&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">duplicate_of: &lt;filename if this duplicates an existing card&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">reasoning: &lt;one line explaining your classification&gt;&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>            }]
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        classification <span style="color:#f92672">=</span> yaml<span style="color:#f92672">.</span>safe_load(response<span style="color:#f92672">.</span>content[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>text)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> classification<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;duplicate_of&#34;</span>):
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Merge content into existing card, delete inbox card</span>
-</span></span><span style="display:flex;"><span>            merge_into(classification[<span style="color:#e6db74">&#34;duplicate_of&#34;</span>], body)
-</span></span><span style="display:flex;"><span>            card_path<span style="color:#f92672">.</span>unlink()
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Update frontmatter</span>
-</span></span><span style="display:flex;"><span>        frontmatter[<span style="color:#e6db74">&#34;priority&#34;</span>] <span style="color:#f92672">=</span> classification[<span style="color:#e6db74">&#34;priority&#34;</span>]
-</span></span><span style="display:flex;"><span>        frontmatter[<span style="color:#e6db74">&#34;parent&#34;</span>] <span style="color:#f92672">=</span> classification<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;parent&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)
-</span></span><span style="display:flex;"><span>        frontmatter[<span style="color:#e6db74">&#34;blocked_on&#34;</span>] <span style="color:#f92672">=</span> classification<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;blocked_on&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)
-</span></span><span style="display:flex;"><span>        frontmatter[<span style="color:#e6db74">&#34;status&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;active&#34;</span>
-</span></span><span style="display:flex;"><span>        frontmatter[<span style="color:#e6db74">&#34;energy&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Ensure acceptance criteria exist</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;## Acceptance Criteria&#34;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> body:
-</span></span><span style="display:flex;"><span>            body <span style="color:#f92672">=</span> add_acceptance_criteria(body, client)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Write updated card to active/</span>
-</span></span><span style="display:flex;"><span>        write_card(active <span style="color:#f92672">/</span> card_path<span style="color:#f92672">.</span>name, frontmatter, body)
-</span></span><span style="display:flex;"><span>        card_path<span style="color:#f92672">.</span>unlink()
-</span></span></code></pre></div><h2 id="the-task-selection-algorithm">The Task Selection Algorithm</h2>
-<p>When you (or an AI worker) want to pick the next task, the selection algorithm considers multiple factors:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">select_next_task</span>():
-</span></span><span style="display:flex;"><span>    candidates <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> card_path <span style="color:#f92672">in</span> (CARDS_DIR <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;active&#34;</span>)<span style="color:#f92672">.</span>glob(<span style="color:#e6db74">&#34;*.md&#34;</span>):
-</span></span><span style="display:flex;"><span>        fm, body <span style="color:#f92672">=</span> parse_card(card_path<span style="color:#f92672">.</span>read_text())
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> fm<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;type&#34;</span>) <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;task&#34;</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> fm<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;blocked_on&#34;</span>):
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Check if verify-after time has passed</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> is_verify_expired(fm[<span style="color:#e6db74">&#34;blocked_on&#34;</span>]):
-</span></span><span style="display:flex;"><span>                clear_block(card_path)
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>  <span style="color:#75715e"># Skip blocked tasks</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        score <span style="color:#f92672">=</span> calculate_score(fm)
-</span></span><span style="display:flex;"><span>        candidates<span style="color:#f92672">.</span>append((score, card_path, fm))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Sort by score (highest first)</span>
-</span></span><span style="display:flex;"><span>    candidates<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> x: x[<span style="color:#ae81ff">0</span>], reverse<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> candidates[<span style="color:#ae81ff">0</span>] <span style="color:#66d9ef">if</span> candidates <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">None</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calculate_score</span>(fm):
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Score = priority weight × energy × recency bonus.&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    priority_weight <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">2</span>: <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">3</span>: <span style="color:#ae81ff">2</span>}
-</span></span><span style="display:flex;"><span>    score <span style="color:#f92672">=</span> priority_weight<span style="color:#f92672">.</span>get(fm<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;priority&#34;</span>, <span style="color:#ae81ff">3</span>), <span style="color:#ae81ff">2</span>)
-</span></span><span style="display:flex;"><span>    score <span style="color:#f92672">*=</span> fm<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;energy&#34;</span>, <span style="color:#ae81ff">1.0</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Recency bonus: newer tasks get a small boost</span>
-</span></span><span style="display:flex;"><span>    age_days <span style="color:#f92672">=</span> (date<span style="color:#f92672">.</span>today() <span style="color:#f92672">-</span> parse_date(fm[<span style="color:#e6db74">&#34;created&#34;</span>]))<span style="color:#f92672">.</span>days
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> age_days <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>:
-</span></span><span style="display:flex;"><span>        score <span style="color:#f92672">*=</span> <span style="color:#ae81ff">1.2</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> score
-</span></span></code></pre></div><h2 id="energy-decay-keeping-the-system-fresh">Energy Decay: Keeping the System Fresh</h2>
-<p>Tasks that sit unworked lose energy over time. This prevents your active list from becoming an ever-growing graveyard of abandoned tasks.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">apply_energy_decay</span>():
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Run daily. Reduce energy of stale tasks.&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> card_path <span style="color:#f92672">in</span> (CARDS_DIR <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;active&#34;</span>)<span style="color:#f92672">.</span>glob(<span style="color:#e6db74">&#34;*.md&#34;</span>):
-</span></span><span style="display:flex;"><span>        fm, body <span style="color:#f92672">=</span> parse_card(card_path<span style="color:#f92672">.</span>read_text())
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> fm<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;type&#34;</span>) <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;task&#34;</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> fm<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;blocked_on&#34;</span>):
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>  <span style="color:#75715e"># Don&#39;t decay blocked tasks</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        age <span style="color:#f92672">=</span> (date<span style="color:#f92672">.</span>today() <span style="color:#f92672">-</span> parse_date(fm[<span style="color:#e6db74">&#34;created&#34;</span>]))<span style="color:#f92672">.</span>days
-</span></span><span style="display:flex;"><span>        current_energy <span style="color:#f92672">=</span> fm<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;energy&#34;</span>, <span style="color:#ae81ff">1.0</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Decay: lose 5% per day after day 3</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> age <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>:
-</span></span><span style="display:flex;"><span>            new_energy <span style="color:#f92672">=</span> max(<span style="color:#ae81ff">0.1</span>, current_energy <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.95</span>)
-</span></span><span style="display:flex;"><span>            fm[<span style="color:#e6db74">&#34;energy&#34;</span>] <span style="color:#f92672">=</span> round(new_energy, <span style="color:#ae81ff">2</span>)
-</span></span><span style="display:flex;"><span>            write_card(card_path, fm, body)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Alert if energy drops below threshold</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> new_energy <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0.3</span>:
-</span></span><span style="display:flex;"><span>            create_review_alert(card_path, fm)
-</span></span></code></pre></div><p>When energy drops below 0.3, the task is effectively de-prioritized. A weekly review agent can flag these for human decision: re-energize (you still want to do it) or archive (let it go).</p>
-<h2 id="blocked-task-resolution">Blocked Task Resolution</h2>
-<p>One of the most powerful features: an agent that periodically checks if blocked tasks can be unblocked.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">check_blocked_tasks</span>():
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Run every 30 minutes. Check if any blocks can be resolved.&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> card_path <span style="color:#f92672">in</span> (CARDS_DIR <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;active&#34;</span>)<span style="color:#f92672">.</span>glob(<span style="color:#e6db74">&#34;*.md&#34;</span>):
-</span></span><span style="display:flex;"><span>        fm, body <span style="color:#f92672">=</span> parse_card(card_path<span style="color:#f92672">.</span>read_text())
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        block <span style="color:#f92672">=</span> fm<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;blocked_on&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> block:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Check verify-after deadlines</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> block<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#34;verify-after:&#34;</span>):
-</span></span><span style="display:flex;"><span>            deadline <span style="color:#f92672">=</span> parse_datetime(block<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;:&#34;</span>, <span style="color:#ae81ff">1</span>)[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>strip())
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> datetime<span style="color:#f92672">.</span>now() <span style="color:#f92672">&gt;=</span> deadline:
-</span></span><span style="display:flex;"><span>                fm[<span style="color:#e6db74">&#34;blocked_on&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>                write_card(card_path, fm, body)
-</span></span><span style="display:flex;"><span>                notify(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Task unblocked: </span><span style="color:#e6db74">{</span>card_path<span style="color:#f92672">.</span>stem<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Check dependency completion</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> block<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#34;depends:&#34;</span>):
-</span></span><span style="display:flex;"><span>            dep_name <span style="color:#f92672">=</span> block<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;:&#34;</span>, <span style="color:#ae81ff">1</span>)[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>strip()
-</span></span><span style="display:flex;"><span>            dep_path <span style="color:#f92672">=</span> CARDS_DIR <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;archive&#34;</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>dep_name<span style="color:#e6db74">}</span><span style="color:#e6db74">.md&#34;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> dep_path<span style="color:#f92672">.</span>exists():  <span style="color:#75715e"># Dependency moved to archive = done</span>
-</span></span><span style="display:flex;"><span>                fm[<span style="color:#e6db74">&#34;blocked_on&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>                write_card(card_path, fm, body)
-</span></span></code></pre></div><h2 id="acceptance-criteria-the-quality-gate">Acceptance Criteria: The Quality Gate</h2>
-<p>Every task must have acceptance criteria — specific, verifiable conditions that define &ldquo;done.&rdquo; This prevents scope creep and enables AI verification.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#75715e">## Acceptance Criteria
-</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">- [ ]</span> Compared 3+ smart home platforms with feature matrix
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">- [ ]</span> Tested compatibility with Philips Hue Bridge v2
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">- [ ]</span> Written recommendation document in Output/intel/
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">- [ ]</span> Created follow-up task for purchasing decisions
-</span></span></code></pre></div><p>The AI triage agent enforces this: if a new task doesn&rsquo;t have acceptance criteria, the agent generates them based on the task description. If it can&rsquo;t generate meaningful criteria, the task is blocked as &ldquo;needs clarification.&rdquo;</p>
-<h2 id="putting-it-all-together">Putting It All Together</h2>
-<p>Schedule the agents:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Every 5 minutes: triage inbox + check blocked tasks</span>
-</span></span><span style="display:flex;"><span>*/5 * * * * python3 ~/scripts/agent-triage.py <span style="color:#f92672">&amp;&amp;</span> python3 ~/scripts/agent-check-blocked.py
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Daily at midnight: energy decay + archive done tasks</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> * * * python3 ~/scripts/energy-decay.py <span style="color:#f92672">&amp;&amp;</span> python3 ~/scripts/archive-done.py
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Weekly: review low-energy tasks</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">9</span> * * <span style="color:#ae81ff">1</span> python3 ~/scripts/weekly-review.py
-</span></span></code></pre></div><h2 id="why-this-works-better-than-traditional-to-do-apps">Why This Works Better Than Traditional To-Do Apps</h2>
-<ol>
-<li><strong>AI triage</strong> means new tasks get classified and prioritized without your effort</li>
-<li><strong>Blocked tracking</strong> makes invisible bottlenecks visible</li>
-<li><strong>Energy decay</strong> naturally surfaces stale tasks for review</li>
-<li><strong>Acceptance criteria</strong> define done clearly before you start</li>
-<li><strong>Markdown files</strong> mean your data is portable, searchable, and git-trackable</li>
-<li><strong>Parent-child hierarchy</strong> connects tasks to projects without complex project management</li>
-</ol>
-<p>The system scales from 10 tasks to 1,000+ without losing usability, because AI handles the cognitive overhead of classification, prioritization, and status tracking.</p>
-<hr>
-<p><em>Part of the PiOS documentation series. PiOS is an open-source Personal Intelligence Operating System for building AI systems that understand your life.</em></p>
-<ul class="pa0">
-  
-</ul>
-
-      
-    </div></article>
-
-    </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://pios-docs.github.io/" >
-    &copy;  PiOS — Personal Intelligence Operating System 2026 
-  </a>
-    <div><div class="ananke-socials"></div>
-</div>
-  </div>
-</footer>
-
-  </body>
-</html>
+</code></pre><p>Each card has YAML frontmatter for metadata:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-markdown data-lang=markdown><span style=display:flex><span>---
+</span></span><span style=display:flex><span>type: task
+</span></span><span style=display:flex><span>status: active
+</span></span><span style=display:flex><span>priority: 2
+</span></span><span style=display:flex><span>parent: home-renovation
+</span></span><span style=display:flex><span>created: 2026-04-07
+</span></span><span style=display:flex><span>energy: 0.8
+</span></span><span style=display:flex><span>blocked_on:
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span># Research smart home platforms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Compare HomeKit, Home Assistant, and Google Home for a new apartment.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Context
+</span></span></span><span style=display:flex><span>Moving to a new apartment in May. Need to decide on smart home platform
+</span></span><span style=display:flex><span>before electrician does the wiring (deadline: April 20).
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Acceptance Criteria
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>- [ ]</span> Compare at least 3 platforms on: cost, device support, automation
+</span></span><span style=display:flex><span><span style=color:#66d9ef>- [ ]</span> Assess compatibility with existing Philips Hue and Aqara devices
+</span></span><span style=display:flex><span><span style=color:#66d9ef>- [ ]</span> Recommendation with reasoning
+</span></span></code></pre></div><p><strong>Why Markdown files instead of a database?</strong></p><ol><li><strong>Human-readable</strong>: Open the folder in any text editor or Obsidian</li><li><strong>AI-friendly</strong>: LLMs read Markdown natively — no serialization needed</li><li><strong>Git-trackable</strong>: Full history of every change to every task</li><li><strong>Tool-agnostic</strong>: No lock-in to any specific app or framework</li><li><strong>Grep-able</strong>: <code>grep -r "blocked_on:" Cards/active/</code> instantly shows all blocked tasks</li></ol><h2 id=the-frontmatter-schema>The Frontmatter Schema</h2><p>Every task card has these fields:</p><table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td><code>task</code> or <code>project</code></td><td>Projects contain tasks; tasks are executable</td></tr><tr><td><code>status</code></td><td><code>inbox</code>, <code>active</code>, <code>done</code></td><td>Current state</td></tr><tr><td><code>priority</code></td><td>1, 2, or 3</td><td>P1 = urgent, P2 = important, P3 = normal</td></tr><tr><td><code>parent</code></td><td>string</td><td>Filename of parent project (empty for top-level)</td></tr><tr><td><code>created</code></td><td>date</td><td>When this card was created</td></tr><tr><td><code>energy</code></td><td>0.0–1.0</td><td>Decay factor — stale tasks get deprioritized</td></tr><tr><td><code>blocked_on</code></td><td>string</td><td>What&rsquo;s preventing progress (empty = ready to work)</td></tr></tbody></table><p>The <code>blocked_on</code> field is the secret weapon. Instead of a binary &ldquo;done/not done&rdquo; state, tasks can be explicitly blocked:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>blocked_on</span>: <span style=color:#ae81ff>abe-action         </span> <span style=color:#75715e># Waiting for human decision</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>blocked_on</span>: <span style=color:#ae81ff>contractor-quote   </span> <span style=color:#75715e># Waiting for external party</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>blocked_on</span>: <span style=color:#ae81ff>api-key-needed     </span> <span style=color:#75715e># Missing resource</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>blocked_on: verify-after</span>: <span style=color:#e6db74>2026-04-10</span> <span style=color:#ae81ff>14</span>:<span style=color:#ae81ff>00</span>  <span style=color:#75715e># Delayed verification</span>
+</span></span></code></pre></div><h2 id=building-the-ai-triage-agent>Building the AI Triage Agent</h2><p>The triage agent processes the inbox: classifies, prioritizes, and routes new cards.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> anthropic
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pathlib <span style=color:#f92672>import</span> Path
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> yaml
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>CARDS_DIR <span style=color:#f92672>=</span> Path<span style=color:#f92672>.</span>home() <span style=color:#f92672>/</span> <span style=color:#e6db74>&#34;vault&#34;</span> <span style=color:#f92672>/</span> <span style=color:#e6db74>&#34;Cards&#34;</span>
+</span></span><span style=display:flex><span>client <span style=color:#f92672>=</span> anthropic<span style=color:#f92672>.</span>Anthropic()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>triage_inbox</span>():
+</span></span><span style=display:flex><span>    inbox <span style=color:#f92672>=</span> CARDS_DIR <span style=color:#f92672>/</span> <span style=color:#e6db74>&#34;inbox&#34;</span>
+</span></span><span style=display:flex><span>    active <span style=color:#f92672>=</span> CARDS_DIR <span style=color:#f92672>/</span> <span style=color:#e6db74>&#34;active&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Load existing projects for context</span>
+</span></span><span style=display:flex><span>    projects <span style=color:#f92672>=</span> load_active_projects()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> card_path <span style=color:#f92672>in</span> inbox<span style=color:#f92672>.</span>glob(<span style=color:#e6db74>&#34;*.md&#34;</span>):
+</span></span><span style=display:flex><span>        content <span style=color:#f92672>=</span> card_path<span style=color:#f92672>.</span>read_text()
+</span></span><span style=display:flex><span>        frontmatter, body <span style=color:#f92672>=</span> parse_card(content)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Ask AI to classify</span>
+</span></span><span style=display:flex><span>        response <span style=color:#f92672>=</span> client<span style=color:#f92672>.</span>messages<span style=color:#f92672>.</span>create(
+</span></span><span style=display:flex><span>            model<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;claude-sonnet-4-6&#34;</span>,
+</span></span><span style=display:flex><span>            max_tokens<span style=color:#f92672>=</span><span style=color:#ae81ff>500</span>,
+</span></span><span style=display:flex><span>            messages<span style=color:#f92672>=</span>[{
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;role&#34;</span>: <span style=color:#e6db74>&#34;user&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;content&#34;</span>: <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;&#34;&#34;Classify this task card.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Active projects:
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>{</span>format_projects(projects)<span style=color:#e6db74>}</span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>New card:
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>{</span>content<span style=color:#e6db74>}</span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Respond in YAML:
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>priority: 1|2|3
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>parent: &lt;matching project filename or empty&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>blocked_on: &lt;if it needs human action or external dependency&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>duplicate_of: &lt;filename if this duplicates an existing card&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>reasoning: &lt;one line explaining your classification&gt;&#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>            }]
+</span></span><span style=display:flex><span>        )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        classification <span style=color:#f92672>=</span> yaml<span style=color:#f92672>.</span>safe_load(response<span style=color:#f92672>.</span>content[<span style=color:#ae81ff>0</span>]<span style=color:#f92672>.</span>text)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> classification<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;duplicate_of&#34;</span>):
+</span></span><span style=display:flex><span>            <span style=color:#75715e># Merge content into existing card, delete inbox card</span>
+</span></span><span style=display:flex><span>            merge_into(classification[<span style=color:#e6db74>&#34;duplicate_of&#34;</span>], body)
+</span></span><span style=display:flex><span>            card_path<span style=color:#f92672>.</span>unlink()
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>continue</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Update frontmatter</span>
+</span></span><span style=display:flex><span>        frontmatter[<span style=color:#e6db74>&#34;priority&#34;</span>] <span style=color:#f92672>=</span> classification[<span style=color:#e6db74>&#34;priority&#34;</span>]
+</span></span><span style=display:flex><span>        frontmatter[<span style=color:#e6db74>&#34;parent&#34;</span>] <span style=color:#f92672>=</span> classification<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;parent&#34;</span>, <span style=color:#e6db74>&#34;&#34;</span>)
+</span></span><span style=display:flex><span>        frontmatter[<span style=color:#e6db74>&#34;blocked_on&#34;</span>] <span style=color:#f92672>=</span> classification<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;blocked_on&#34;</span>, <span style=color:#e6db74>&#34;&#34;</span>)
+</span></span><span style=display:flex><span>        frontmatter[<span style=color:#e6db74>&#34;status&#34;</span>] <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;active&#34;</span>
+</span></span><span style=display:flex><span>        frontmatter[<span style=color:#e6db74>&#34;energy&#34;</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>1.0</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Ensure acceptance criteria exist</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#34;## Acceptance Criteria&#34;</span> <span style=color:#f92672>not</span> <span style=color:#f92672>in</span> body:
+</span></span><span style=display:flex><span>            body <span style=color:#f92672>=</span> add_acceptance_criteria(body, client)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Write updated card to active/</span>
+</span></span><span style=display:flex><span>        write_card(active <span style=color:#f92672>/</span> card_path<span style=color:#f92672>.</span>name, frontmatter, body)
+</span></span><span style=display:flex><span>        card_path<span style=color:#f92672>.</span>unlink()
+</span></span></code></pre></div><h2 id=the-task-selection-algorithm>The Task Selection Algorithm</h2><p>When you (or an AI worker) want to pick the next task, the selection algorithm considers multiple factors:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>select_next_task</span>():
+</span></span><span style=display:flex><span>    candidates <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> card_path <span style=color:#f92672>in</span> (CARDS_DIR <span style=color:#f92672>/</span> <span style=color:#e6db74>&#34;active&#34;</span>)<span style=color:#f92672>.</span>glob(<span style=color:#e6db74>&#34;*.md&#34;</span>):
+</span></span><span style=display:flex><span>        fm, body <span style=color:#f92672>=</span> parse_card(card_path<span style=color:#f92672>.</span>read_text())
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> fm<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;type&#34;</span>) <span style=color:#f92672>!=</span> <span style=color:#e6db74>&#34;task&#34;</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>continue</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> fm<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;blocked_on&#34;</span>):
+</span></span><span style=display:flex><span>            <span style=color:#75715e># Check if verify-after time has passed</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> is_verify_expired(fm[<span style=color:#e6db74>&#34;blocked_on&#34;</span>]):
+</span></span><span style=display:flex><span>                clear_block(card_path)
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>continue</span>  <span style=color:#75715e># Skip blocked tasks</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        score <span style=color:#f92672>=</span> calculate_score(fm)
+</span></span><span style=display:flex><span>        candidates<span style=color:#f92672>.</span>append((score, card_path, fm))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Sort by score (highest first)</span>
+</span></span><span style=display:flex><span>    candidates<span style=color:#f92672>.</span>sort(key<span style=color:#f92672>=</span><span style=color:#66d9ef>lambda</span> x: x[<span style=color:#ae81ff>0</span>], reverse<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> candidates[<span style=color:#ae81ff>0</span>] <span style=color:#66d9ef>if</span> candidates <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>None</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>calculate_score</span>(fm):
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;Score = priority weight × energy × recency bonus.&#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    priority_weight <span style=color:#f92672>=</span> {<span style=color:#ae81ff>1</span>: <span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>2</span>: <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>3</span>: <span style=color:#ae81ff>2</span>}
+</span></span><span style=display:flex><span>    score <span style=color:#f92672>=</span> priority_weight<span style=color:#f92672>.</span>get(fm<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;priority&#34;</span>, <span style=color:#ae81ff>3</span>), <span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>    score <span style=color:#f92672>*=</span> fm<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;energy&#34;</span>, <span style=color:#ae81ff>1.0</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Recency bonus: newer tasks get a small boost</span>
+</span></span><span style=display:flex><span>    age_days <span style=color:#f92672>=</span> (date<span style=color:#f92672>.</span>today() <span style=color:#f92672>-</span> parse_date(fm[<span style=color:#e6db74>&#34;created&#34;</span>]))<span style=color:#f92672>.</span>days
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> age_days <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>3</span>:
+</span></span><span style=display:flex><span>        score <span style=color:#f92672>*=</span> <span style=color:#ae81ff>1.2</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> score
+</span></span></code></pre></div><h2 id=energy-decay-keeping-the-system-fresh>Energy Decay: Keeping the System Fresh</h2><p>Tasks that sit unworked lose energy over time. This prevents your active list from becoming an ever-growing graveyard of abandoned tasks.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>apply_energy_decay</span>():
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;Run daily. Reduce energy of stale tasks.&#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> card_path <span style=color:#f92672>in</span> (CARDS_DIR <span style=color:#f92672>/</span> <span style=color:#e6db74>&#34;active&#34;</span>)<span style=color:#f92672>.</span>glob(<span style=color:#e6db74>&#34;*.md&#34;</span>):
+</span></span><span style=display:flex><span>        fm, body <span style=color:#f92672>=</span> parse_card(card_path<span style=color:#f92672>.</span>read_text())
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> fm<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;type&#34;</span>) <span style=color:#f92672>!=</span> <span style=color:#e6db74>&#34;task&#34;</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>continue</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> fm<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;blocked_on&#34;</span>):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>continue</span>  <span style=color:#75715e># Don&#39;t decay blocked tasks</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        age <span style=color:#f92672>=</span> (date<span style=color:#f92672>.</span>today() <span style=color:#f92672>-</span> parse_date(fm[<span style=color:#e6db74>&#34;created&#34;</span>]))<span style=color:#f92672>.</span>days
+</span></span><span style=display:flex><span>        current_energy <span style=color:#f92672>=</span> fm<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;energy&#34;</span>, <span style=color:#ae81ff>1.0</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Decay: lose 5% per day after day 3</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> age <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>3</span>:
+</span></span><span style=display:flex><span>            new_energy <span style=color:#f92672>=</span> max(<span style=color:#ae81ff>0.1</span>, current_energy <span style=color:#f92672>*</span> <span style=color:#ae81ff>0.95</span>)
+</span></span><span style=display:flex><span>            fm[<span style=color:#e6db74>&#34;energy&#34;</span>] <span style=color:#f92672>=</span> round(new_energy, <span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>            write_card(card_path, fm, body)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Alert if energy drops below threshold</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> new_energy <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0.3</span>:
+</span></span><span style=display:flex><span>            create_review_alert(card_path, fm)
+</span></span></code></pre></div><p>When energy drops below 0.3, the task is effectively de-prioritized. A weekly review agent can flag these for human decision: re-energize (you still want to do it) or archive (let it go).</p><h2 id=blocked-task-resolution>Blocked Task Resolution</h2><p>One of the most powerful features: an agent that periodically checks if blocked tasks can be unblocked.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>check_blocked_tasks</span>():
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;Run every 30 minutes. Check if any blocks can be resolved.&#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> card_path <span style=color:#f92672>in</span> (CARDS_DIR <span style=color:#f92672>/</span> <span style=color:#e6db74>&#34;active&#34;</span>)<span style=color:#f92672>.</span>glob(<span style=color:#e6db74>&#34;*.md&#34;</span>):
+</span></span><span style=display:flex><span>        fm, body <span style=color:#f92672>=</span> parse_card(card_path<span style=color:#f92672>.</span>read_text())
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        block <span style=color:#f92672>=</span> fm<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;blocked_on&#34;</span>, <span style=color:#e6db74>&#34;&#34;</span>)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> block:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>continue</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Check verify-after deadlines</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> block<span style=color:#f92672>.</span>startswith(<span style=color:#e6db74>&#34;verify-after:&#34;</span>):
+</span></span><span style=display:flex><span>            deadline <span style=color:#f92672>=</span> parse_datetime(block<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#34;:&#34;</span>, <span style=color:#ae81ff>1</span>)[<span style=color:#ae81ff>1</span>]<span style=color:#f92672>.</span>strip())
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> datetime<span style=color:#f92672>.</span>now() <span style=color:#f92672>&gt;=</span> deadline:
+</span></span><span style=display:flex><span>                fm[<span style=color:#e6db74>&#34;blocked_on&#34;</span>] <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>
+</span></span><span style=display:flex><span>                write_card(card_path, fm, body)
+</span></span><span style=display:flex><span>                notify(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Task unblocked: </span><span style=color:#e6db74>{</span>card_path<span style=color:#f92672>.</span>stem<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Check dependency completion</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> block<span style=color:#f92672>.</span>startswith(<span style=color:#e6db74>&#34;depends:&#34;</span>):
+</span></span><span style=display:flex><span>            dep_name <span style=color:#f92672>=</span> block<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#34;:&#34;</span>, <span style=color:#ae81ff>1</span>)[<span style=color:#ae81ff>1</span>]<span style=color:#f92672>.</span>strip()
+</span></span><span style=display:flex><span>            dep_path <span style=color:#f92672>=</span> CARDS_DIR <span style=color:#f92672>/</span> <span style=color:#e6db74>&#34;archive&#34;</span> <span style=color:#f92672>/</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>dep_name<span style=color:#e6db74>}</span><span style=color:#e6db74>.md&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> dep_path<span style=color:#f92672>.</span>exists():  <span style=color:#75715e># Dependency moved to archive = done</span>
+</span></span><span style=display:flex><span>                fm[<span style=color:#e6db74>&#34;blocked_on&#34;</span>] <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>
+</span></span><span style=display:flex><span>                write_card(card_path, fm, body)
+</span></span></code></pre></div><h2 id=acceptance-criteria-the-quality-gate>Acceptance Criteria: The Quality Gate</h2><p>Every task must have acceptance criteria — specific, verifiable conditions that define &ldquo;done.&rdquo; This prevents scope creep and enables AI verification.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-markdown data-lang=markdown><span style=display:flex><span><span style=color:#75715e>## Acceptance Criteria
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>- [ ]</span> Compared 3+ smart home platforms with feature matrix
+</span></span><span style=display:flex><span><span style=color:#66d9ef>- [ ]</span> Tested compatibility with Philips Hue Bridge v2
+</span></span><span style=display:flex><span><span style=color:#66d9ef>- [ ]</span> Written recommendation document in Output/intel/
+</span></span><span style=display:flex><span><span style=color:#66d9ef>- [ ]</span> Created follow-up task for purchasing decisions
+</span></span></code></pre></div><p>The AI triage agent enforces this: if a new task doesn&rsquo;t have acceptance criteria, the agent generates them based on the task description. If it can&rsquo;t generate meaningful criteria, the task is blocked as &ldquo;needs clarification.&rdquo;</p><h2 id=putting-it-all-together>Putting It All Together</h2><p>Schedule the agents:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Every 5 minutes: triage inbox + check blocked tasks</span>
+</span></span><span style=display:flex><span>*/5 * * * * python3 ~/scripts/agent-triage.py <span style=color:#f92672>&amp;&amp;</span> python3 ~/scripts/agent-check-blocked.py
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Daily at midnight: energy decay + archive done tasks</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>0</span> <span style=color:#ae81ff>0</span> * * * python3 ~/scripts/energy-decay.py <span style=color:#f92672>&amp;&amp;</span> python3 ~/scripts/archive-done.py
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Weekly: review low-energy tasks</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>0</span> <span style=color:#ae81ff>9</span> * * <span style=color:#ae81ff>1</span> python3 ~/scripts/weekly-review.py
+</span></span></code></pre></div><h2 id=why-this-works-better-than-traditional-to-do-apps>Why This Works Better Than Traditional To-Do Apps</h2><ol><li><strong>AI triage</strong> means new tasks get classified and prioritized without your effort</li><li><strong>Blocked tracking</strong> makes invisible bottlenecks visible</li><li><strong>Energy decay</strong> naturally surfaces stale tasks for review</li><li><strong>Acceptance criteria</strong> define done clearly before you start</li><li><strong>Markdown files</strong> mean your data is portable, searchable, and git-trackable</li><li><strong>Parent-child hierarchy</strong> connects tasks to projects without complex project management</li></ol><p>The system scales from 10 tasks to 1,000+ without losing usability, because AI handles the cognitive overhead of classification, prioritization, and status tracking.</p><hr><p><em>Part of the PiOS documentation series. PiOS is an open-source Personal Intelligence Operating System for building AI systems that understand your life.</em></p><ul class=pa0></ul></div></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href=https://pios-docs.github.io/>&copy; PiOS — Personal Intelligence Operating System 2026</a><div><div class=ananke-socials></div></div></div></footer></body></html>

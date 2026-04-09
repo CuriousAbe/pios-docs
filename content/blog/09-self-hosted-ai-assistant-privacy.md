@@ -1,5 +1,6 @@
 ---
 title: "Self-Hosted AI Assistant: The Privacy-First Approach to Personal AI"
+date: 2026-04-07
 slug: self-hosted-ai-assistant-privacy
 target_keywords:
   - self hosted AI assistant
@@ -8,6 +9,7 @@ target_keywords:
   - AI assistant privacy
   - run AI locally personal data
 meta_description: "Build a self-hosted AI assistant that keeps your personal data private. Learn the architecture, trade-offs, and practical setup for local-first personal AI."
+description: "Build a self-hosted AI assistant that keeps your personal data private. Learn the architecture, trade-offs, and practical setup for local-first personal AI."
 created: 2026-04-07
 word_count: ~2200
 type: seo_article

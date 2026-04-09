@@ -1,330 +1,134 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>Using Claude Code for Home Automation: A Personal AI Approach | PiOS — Personal Intelligence Operating System</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Using Claude Code for Home Automation: A Personal AI Approach
-Claude Code isn&rsquo;t just for writing software. With scheduled tasks, file system access, and shell command execution, it&rsquo;s a powerful platform for automating your personal life.
-This guide shows practical examples of personal automation with Claude Code — not smart home light switches, but the kind of automation that makes your daily life more organized, informed, and intentional.
-What Makes Claude Code Different
-Most AI tools are chat-based: you ask a question, get an answer, repeat. Claude Code operates differently:">
-    <meta name="generator" content="Hugo 0.160.1">
-    
-    
-    
-      <meta name="robots" content="index, follow">
-    
-    
-
-    
-<link rel="stylesheet" href="/ananke/css/main.min.efe4d852f731d5d1fbb87718387202a97aafd768cdcdaed0662bbe6982e91824.css" >
-
-
-
-
-    
-
-
-    
-      
-
-    
-
-    
-
-    
-      <link rel="canonical" href="https://pios-docs.github.io/blog/claude-code-home-automation-personal-ai/">
-    
-
-    
-    
-    <meta property="og:url" content="https://pios-docs.github.io/blog/claude-code-home-automation-personal-ai/">
-  <meta property="og:site_name" content="PiOS — Personal Intelligence Operating System">
-  <meta property="og:title" content="Using Claude Code for Home Automation: A Personal AI Approach">
-  <meta property="og:description" content="Using Claude Code for Home Automation: A Personal AI Approach Claude Code isn’t just for writing software. With scheduled tasks, file system access, and shell command execution, it’s a powerful platform for automating your personal life.
-This guide shows practical examples of personal automation with Claude Code — not smart home light switches, but the kind of automation that makes your daily life more organized, informed, and intentional.
-What Makes Claude Code Different Most AI tools are chat-based: you ask a question, get an answer, repeat. Claude Code operates differently:">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="blog">
-
-  <meta itemprop="name" content="Using Claude Code for Home Automation: A Personal AI Approach">
-  <meta itemprop="description" content="Using Claude Code for Home Automation: A Personal AI Approach Claude Code isn’t just for writing software. With scheduled tasks, file system access, and shell command execution, it’s a powerful platform for automating your personal life.
-This guide shows practical examples of personal automation with Claude Code — not smart home light switches, but the kind of automation that makes your daily life more organized, informed, and intentional.
-What Makes Claude Code Different Most AI tools are chat-based: you ask a question, get an answer, repeat. Claude Code operates differently:">
-  <meta itemprop="wordCount" content="1261">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Using Claude Code for Home Automation: A Personal AI Approach">
-  <meta name="twitter:description" content="Using Claude Code for Home Automation: A Personal AI Approach Claude Code isn’t just for writing software. With scheduled tasks, file system access, and shell command execution, it’s a powerful platform for automating your personal life.
-This guide shows practical examples of personal automation with Claude Code — not smart home light switches, but the kind of automation that makes your daily life more organized, informed, and intentional.
-What Makes Claude Code Different Most AI tools are chat-based: you ask a question, get an answer, repeat. Claude Code operates differently:">
-
-      
-      
-    
-	
-  </head><body class="ma0 avenir bg-near-white production is-page is-page page-07-claude-code-home-automation">
-    
-   
-  
-
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l center items-center justify-between">
-    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
-      
-        PiOS — Personal Intelligence Operating System
-      
-    </a>
-    <div class="flex-l items-center">
-      
-
-      
-      <div class="ananke-socials"></div>
-
-    </div>
-  </div>
-</nav>
-
-    </div>
-  </header>
-
-
-
-    <main class="pb7" role="main">
-      
-  
-
-  <article class="page-07-claude-code-home-automation flex-l mw7 center ph3 flex-wrap justify-between">
-    <header class="mt4 w-100">
-      <aside class="instapaper_ignoref b helvetica tracked ttu">
-          
-        Blogs
-      </aside><div id="sharing" class="mt3 ananke-socials"></div>
-<h1 class="f1 athelas mt3 mb1">Using Claude Code for Home Automation: A Personal AI Approach</h1>
-      
-      
-      
-
-      
-      
-    </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-100-l"><h1 id="using-claude-code-for-home-automation-a-personal-ai-approach">Using Claude Code for Home Automation: A Personal AI Approach</h1>
-<p>Claude Code isn&rsquo;t just for writing software. With scheduled tasks, file system access, and shell command execution, it&rsquo;s a powerful platform for automating your personal life.</p>
-<p>This guide shows practical examples of personal automation with Claude Code — not smart home light switches, but the kind of automation that makes your daily life more organized, informed, and intentional.</p>
-<h2 id="what-makes-claude-code-different">What Makes Claude Code Different</h2>
-<p>Most AI tools are chat-based: you ask a question, get an answer, repeat. Claude Code operates differently:</p>
-<ul>
-<li><strong>File system access</strong>: It reads and writes files on your machine</li>
-<li><strong>Shell execution</strong>: It runs commands, scripts, and programs</li>
-<li><strong>Scheduled tasks</strong>: It can run on a timer without you being present</li>
-<li><strong>Persistent context</strong>: Within a session, it remembers what it&rsquo;s done</li>
-<li><strong>Tool use</strong>: It can call APIs, process data, and generate structured output</li>
-</ul>
-<p>This makes Claude Code act more like an autonomous agent than a chatbot. You define what needs to happen, and it does it — on schedule, without supervision.</p>
-<h2 id="example-1-automated-morning-briefing">Example 1: Automated Morning Briefing</h2>
-<p><strong>Goal</strong>: Every morning at 7 AM, generate a personalized briefing that combines health data, calendar events, weather, and active tasks.</p>
-<p><strong>Setup</strong>: Create a scheduled task that runs daily:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span># morning-briefing
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Schedule: 0 7 <span style="font-style:italic">* *</span> *
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> Read ~/vault/data/health/today.json (Apple Health export)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> Read ~/vault/Cards/active/*.md (all active tasks)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> Read ~/vault/Daily/yesterday.md (yesterday&#39;s journal)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">4.</span> Check weather for my location
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">5.</span> Generate a briefing and save to ~/vault/Daily/today-briefing.md
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">6.</span> If any health metric is concerning (sleep &lt; 6h, HR &gt; 80 resting),
-</span></span><span style="display:flex;"><span>   add an alert section
-</span></span></code></pre></div><p><strong>What it produces</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span># Morning Briefing — April 7, 2026
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## 🏥 Health
-</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Sleep: 7h 12m (good — above 7h target)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Steps yesterday: 10,234 ✓
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Resting HR: 58 bpm (normal)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## 📅 Today
-</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 10:00 Design review call (prepare mockups)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 14:00 Dentist appointment
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> No evening commitments — good night for deep work
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## ✅ Priority Tasks
-</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> [P1] Finalize contractor shortlist (deadline: April 10)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> [P2] Review SEO article drafts
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> [P2] Update project documentation
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## 🌤 Weather
-</span></span></span><span style="display:flex;"><span>Partly cloudy, 22°C. Good day for a walk.
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## 💡 From Yesterday
-</span></span></span><span style="display:flex;"><span>You mentioned wanting to start the API refactoring. No blockers
-</span></span><span style="display:flex;"><span>found in the codebase — ready to start when you are.
-</span></span></code></pre></div><h2 id="example-2-message-digest-pipeline">Example 2: Message Digest Pipeline</h2>
-<p><strong>Goal</strong>: Every evening, summarize your day&rsquo;s messages across platforms into a single, scannable digest.</p>
-<p><strong>How it works</strong>:</p>
-<p>Claude Code reads message exports (WeChat database, iMessage database, or exported chat logs) and generates a digest:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span># Message Digest — April 7, 2026
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Key Conversations
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">### Mom (WeChat)
-</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Asked about flight times for May visit
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Confirmed she&#39;s continuing new medication, feeling better
-</span></span><span style="display:flex;"><span>→ <span style="font-weight:bold">**Action**</span>: Book return flight, send her itinerary
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">### David (iMessage)
-</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Discussed Q2 project timeline
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> He&#39;s blocked on the API documentation
-</span></span><span style="display:flex;"><span>→ <span style="font-weight:bold">**Action**</span>: Share API docs by Wednesday
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">### Team Group (Slack)
-</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Sprint planning moved to Thursday
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> New designer starting next week
-</span></span><span style="display:flex;"><span>→ <span style="font-weight:bold">**Info only**</span>: No action needed
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Stats
-</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Total conversations: 12
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Action items generated: 2
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Time saved vs reading all messages: ~25 min
-</span></span></code></pre></div><p>The key insight: you don&rsquo;t need to read every message. The AI reads them, extracts what matters, and flags action items. You skim the digest in 2 minutes instead of spending 30 minutes scrolling through chats.</p>
-<h2 id="example-3-photo-diary-generator">Example 3: Photo Diary Generator</h2>
-<p><strong>Goal</strong>: Every day, create a visual diary entry from photos taken that day, with AI-generated captions and context.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># The Claude Code task reads today&#39;s photos, extracts EXIF data,</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># and generates a diary entry:</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Read all photos from ~/Photos/2026-04-07/
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">For each photo:
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Extract time, location (GPS), and camera info
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Generate a caption describing the scene
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Note the context (what was happening at that time based on
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  today&#39;s calendar and messages)
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Save as ~/vault/Daily/2026-04-07-photos.md with embedded images.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
-</span></span></code></pre></div><p><strong>Output</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span># Photo Diary — April 7, 2026
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## 08:32 — Morning Coffee
-</span></span></span><span style="display:flex;"><span>![[IMG_4521.jpg]]
-</span></span><span style="display:flex;"><span>*Your usual spot at the café. Cappuccino and the morning briefing
-</span></span><span style="display:flex;"><span>on your laptop. Partly cloudy outside.*
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## 12:15 — Lunch with the Team
-</span></span></span><span style="display:flex;"><span>![[IMG_4523.jpg]]
-</span></span><span style="display:flex;"><span>*New restaurant near the office — looks like you tried the
-</span></span><span style="display:flex;"><span>seafood pasta. David and Sarah in the background.*
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## 18:45 — Sunset Walk
-</span></span></span><span style="display:flex;"><span>![[IMG_4525.jpg]]
-</span></span><span style="display:flex;"><span>*Waterfront path near the apartment. 8,421 steps today — this
-</span></span><span style="display:flex;"><span>walk pushed you past the 8k target. Nice light.*
-</span></span></code></pre></div><h2 id="example-4-autonomous-task-worker">Example 4: Autonomous Task Worker</h2>
-<p><strong>Goal</strong>: Every 5 minutes, check if there are tasks the AI can complete autonomously, and do them.</p>
-<p>This is the most powerful pattern — Claude Code as an autonomous worker:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span># task-worker (runs every 5 minutes)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> Scan ~/vault/Cards/inbox/ for new tasks
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> Triage: classify, set priority, move to active/
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> Scan ~/vault/Cards/active/ for tasks I can complete:
-</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> Research tasks (web search + analysis)
-</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> Content generation (drafts, outlines)
-</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> Data analysis (read vault data, find patterns)
-</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> System maintenance (check logs, clean up)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">4.</span> Pick the highest-priority unblocked task
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">5.</span> Execute it (research, write, analyze)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">6.</span> Save output to ~/vault/Output/
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">7.</span> Mark task as done if acceptance criteria are met
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">8.</span> Log what I did to ~/vault/Log/worker-log.md
-</span></span></code></pre></div><p><strong>Tasks the worker can handle autonomously:</strong></p>
-<ul>
-<li>&ldquo;Research best practices for X&rdquo; → produces a report</li>
-<li>&ldquo;Compare products A, B, C&rdquo; → produces a comparison matrix</li>
-<li>&ldquo;Summarize this week&rsquo;s health data&rdquo; → produces a trend analysis</li>
-<li>&ldquo;Generate 3 title options for this article&rdquo; → produces options</li>
-<li>&ldquo;Check if the deployment script is working&rdquo; → runs tests, reports results</li>
-</ul>
-<p><strong>Tasks that need human input:</strong></p>
-<ul>
-<li>&ldquo;Decide between option A and B&rdquo; → blocked, waits for your decision</li>
-<li>&ldquo;Schedule a meeting with X&rdquo; → blocked, needs your calendar access</li>
-<li>&ldquo;Review this contract&rdquo; → blocked, legal decisions need human judgment</li>
-</ul>
-<p>The worker knows the difference and handles blocking gracefully.</p>
-<h2 id="example-5-weekly-health-report">Example 5: Weekly Health Report</h2>
-<p><strong>Goal</strong>: Every Sunday, analyze the week&rsquo;s health data and produce a trend report.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span># weekly-health-review (runs Sunday 9 AM)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Read health data from the last 7 days.
-</span></span><span style="display:flex;"><span>Compare to the previous 4 weeks.
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Report on:
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> Sleep quality trend (improving/declining?)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> Activity level vs goals
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> Heart rate variability trend
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">4.</span> Any anomalies or concerns
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">5.</span> Recommendations for next week
-</span></span></code></pre></div><p><strong>Output</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span># Weekly Health Report — Week of March 31
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Sleep
-</span></span></span><span style="display:flex;"><span>Average: 7.1h (target: 7.5h) — slightly below target
-</span></span><span style="display:flex;"><span>Trend: ↗ improving from last week&#39;s 6.8h average
-</span></span><span style="display:flex;"><span>Deep sleep: 22% (good range: 20-25%)
-</span></span><span style="display:flex;"><span>Worst night: Tuesday (5.8h — late work session)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Activity
-</span></span></span><span style="display:flex;"><span>Average daily steps: 8,934 (target: 8,000) ✓
-</span></span><span style="display:flex;"><span>Active days (&gt;8k steps): 5/7 ✓
-</span></span><span style="display:flex;"><span>Longest sedentary period: 4.2h on Wednesday
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Heart Rate
-</span></span></span><span style="display:flex;"><span>Resting average: 59 bpm (your baseline: 58-62)
-</span></span><span style="display:flex;"><span>HRV average: 48ms (stable, within normal range)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Recommendations
-</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> Tuesday sleep deficit correlates with late screen time.
-</span></span><span style="display:flex;"><span>   Consider a hard stop at 10:30 PM.
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> Wednesday sedentary period — set a 2-hour movement reminder.
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> Overall trend is positive. Keep the evening walk routine.
-</span></span></code></pre></div><h2 id="getting-started">Getting Started</h2>
-<ol>
-<li><strong>Install Claude Code</strong> on your Mac or Linux machine</li>
-<li><strong>Set up a vault directory</strong> (<code>~/vault/</code>) with subdirectories for data, daily notes, and tasks</li>
-<li><strong>Start with one automation</strong> — the morning briefing is the easiest and most immediately useful</li>
-<li><strong>Add more over time</strong> — each automation makes the others more valuable because they share the vault</li>
-</ol>
-<p>The PiOS project provides a complete framework for this kind of personal automation, with plugin architecture, scheduling, and a web dashboard. But you can start with just Claude Code and a few scheduled tasks.</p>
-<h2 id="resources">Resources</h2>
-<ul>
-<li><strong>PiOS</strong>: <a href="https://github.com/pios-ai/pios">github.com/pios-ai/pios</a></li>
-<li><strong>Claude Code</strong>: <a href="https://claude.ai/code">claude.ai/code</a></li>
-<li><strong>Claude Code Scheduled Tasks</strong>: See Claude Code documentation</li>
-</ul>
-<hr>
-<p><em>Part of the PiOS documentation series. PiOS is an open-source Personal Intelligence Operating System for building AI systems that understand your life.</em></p>
-<ul class="pa0">
-  
-</ul>
-
-      
-    </div></article>
-
-    </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://pios-docs.github.io/" >
-    &copy;  PiOS — Personal Intelligence Operating System 2026 
-  </a>
-    <div><div class="ananke-socials"></div>
-</div>
-  </div>
-</footer>
-
-  </body>
-</html>
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>Using Claude Code for Home Automation: A Personal AI Approach | PiOS — Personal Intelligence Operating System</title><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=description content="Real examples of using Claude Code to automate your personal life: health tracking, message digests, photo diaries, and task management — all running locally."><meta name=generator content="Hugo 0.160.1"><meta name=robots content="index, follow"><link rel=stylesheet href=/ananke/css/main.min.efe4d852f731d5d1fbb87718387202a97aafd768cdcdaed0662bbe6982e91824.css><link rel=canonical href=https://pios-docs.github.io/blog/claude-code-home-automation-personal-ai/><meta property="og:url" content="https://pios-docs.github.io/blog/claude-code-home-automation-personal-ai/"><meta property="og:site_name" content="PiOS — Personal Intelligence Operating System"><meta property="og:title" content="Using Claude Code for Home Automation: A Personal AI Approach"><meta property="og:description" content="Real examples of using Claude Code to automate your personal life: health tracking, message digests, photo diaries, and task management — all running locally."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="blog"><meta property="article:published_time" content="2026-04-07T00:00:00+00:00"><meta property="article:modified_time" content="2026-04-07T00:00:00+00:00"><meta itemprop=name content="Using Claude Code for Home Automation: A Personal AI Approach"><meta itemprop=description content="Real examples of using Claude Code to automate your personal life: health tracking, message digests, photo diaries, and task management — all running locally."><meta itemprop=datePublished content="2026-04-07T00:00:00+00:00"><meta itemprop=dateModified content="2026-04-07T00:00:00+00:00"><meta itemprop=wordCount content="1261"><meta name=twitter:card content="summary"><meta name=twitter:title content="Using Claude Code for Home Automation: A Personal AI Approach"><meta name=twitter:description content="Real examples of using Claude Code to automate your personal life: health tracking, message digests, photo diaries, and task management — all running locally."></head><body class="ma0 avenir bg-near-white production is-page is-page page-07-claude-code-home-automation"><header><div class=bg-black><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l center items-center justify-between"><a href=/ class="f3 fw2 hover-white white-90 dib no-underline">PiOS — Personal Intelligence Operating System</a><div class="flex-l items-center"><div class=ananke-socials></div></div></div></nav></div></header><main class=pb7 role=main><article class="page-07-claude-code-home-automation flex-l mw7 center ph3 flex-wrap justify-between"><header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked ttu">Blogs</aside><div id=sharing class="mt3 ananke-socials"></div><h1 class="f1 athelas mt3 mb1">Using Claude Code for Home Automation: A Personal AI Approach</h1><time class="f6 mv4 dib tracked" datetime=2026-04-07T00:00:00Z>April 7, 2026</time></header><div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-100-l"><h1 id=using-claude-code-for-home-automation-a-personal-ai-approach>Using Claude Code for Home Automation: A Personal AI Approach</h1><p>Claude Code isn&rsquo;t just for writing software. With scheduled tasks, file system access, and shell command execution, it&rsquo;s a powerful platform for automating your personal life.</p><p>This guide shows practical examples of personal automation with Claude Code — not smart home light switches, but the kind of automation that makes your daily life more organized, informed, and intentional.</p><h2 id=what-makes-claude-code-different>What Makes Claude Code Different</h2><p>Most AI tools are chat-based: you ask a question, get an answer, repeat. Claude Code operates differently:</p><ul><li><strong>File system access</strong>: It reads and writes files on your machine</li><li><strong>Shell execution</strong>: It runs commands, scripts, and programs</li><li><strong>Scheduled tasks</strong>: It can run on a timer without you being present</li><li><strong>Persistent context</strong>: Within a session, it remembers what it&rsquo;s done</li><li><strong>Tool use</strong>: It can call APIs, process data, and generate structured output</li></ul><p>This makes Claude Code act more like an autonomous agent than a chatbot. You define what needs to happen, and it does it — on schedule, without supervision.</p><h2 id=example-1-automated-morning-briefing>Example 1: Automated Morning Briefing</h2><p><strong>Goal</strong>: Every morning at 7 AM, generate a personalized briefing that combines health data, calendar events, weather, and active tasks.</p><p><strong>Setup</strong>: Create a scheduled task that runs daily:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-markdown data-lang=markdown><span style=display:flex><span># morning-briefing
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Schedule: 0 7 <span style=font-style:italic>* *</span> *
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>1.</span> Read ~/vault/data/health/today.json (Apple Health export)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>2.</span> Read ~/vault/Cards/active/*.md (all active tasks)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>3.</span> Read ~/vault/Daily/yesterday.md (yesterday&#39;s journal)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>4.</span> Check weather for my location
+</span></span><span style=display:flex><span><span style=color:#66d9ef>5.</span> Generate a briefing and save to ~/vault/Daily/today-briefing.md
+</span></span><span style=display:flex><span><span style=color:#66d9ef>6.</span> If any health metric is concerning (sleep &lt; 6h, HR &gt; 80 resting),
+</span></span><span style=display:flex><span>   add an alert section
+</span></span></code></pre></div><p><strong>What it produces</strong>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-markdown data-lang=markdown><span style=display:flex><span># Morning Briefing — April 7, 2026
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## 🏥 Health
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Sleep: 7h 12m (good — above 7h target)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Steps yesterday: 10,234 ✓
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Resting HR: 58 bpm (normal)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## 📅 Today
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> 10:00 Design review call (prepare mockups)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> 14:00 Dentist appointment
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> No evening commitments — good night for deep work
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## ✅ Priority Tasks
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>1.</span> [P1] Finalize contractor shortlist (deadline: April 10)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>2.</span> [P2] Review SEO article drafts
+</span></span><span style=display:flex><span><span style=color:#66d9ef>3.</span> [P2] Update project documentation
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## 🌤 Weather
+</span></span></span><span style=display:flex><span>Partly cloudy, 22°C. Good day for a walk.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## 💡 From Yesterday
+</span></span></span><span style=display:flex><span>You mentioned wanting to start the API refactoring. No blockers
+</span></span><span style=display:flex><span>found in the codebase — ready to start when you are.
+</span></span></code></pre></div><h2 id=example-2-message-digest-pipeline>Example 2: Message Digest Pipeline</h2><p><strong>Goal</strong>: Every evening, summarize your day&rsquo;s messages across platforms into a single, scannable digest.</p><p><strong>How it works</strong>:</p><p>Claude Code reads message exports (WeChat database, iMessage database, or exported chat logs) and generates a digest:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-markdown data-lang=markdown><span style=display:flex><span># Message Digest — April 7, 2026
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Key Conversations
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Mom (WeChat)
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Asked about flight times for May visit
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Confirmed she&#39;s continuing new medication, feeling better
+</span></span><span style=display:flex><span>→ <span style=font-weight:700>**Action**</span>: Book return flight, send her itinerary
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### David (iMessage)
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Discussed Q2 project timeline
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> He&#39;s blocked on the API documentation
+</span></span><span style=display:flex><span>→ <span style=font-weight:700>**Action**</span>: Share API docs by Wednesday
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Team Group (Slack)
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Sprint planning moved to Thursday
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> New designer starting next week
+</span></span><span style=display:flex><span>→ <span style=font-weight:700>**Info only**</span>: No action needed
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Stats
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Total conversations: 12
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Action items generated: 2
+</span></span><span style=display:flex><span><span style=color:#66d9ef>-</span> Time saved vs reading all messages: ~25 min
+</span></span></code></pre></div><p>The key insight: you don&rsquo;t need to read every message. The AI reads them, extracts what matters, and flags action items. You skim the digest in 2 minutes instead of spending 30 minutes scrolling through chats.</p><h2 id=example-3-photo-diary-generator>Example 3: Photo Diary Generator</h2><p><strong>Goal</strong>: Every day, create a visual diary entry from photos taken that day, with AI-generated captions and context.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># The Claude Code task reads today&#39;s photos, extracts EXIF data,</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># and generates a diary entry:</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Read all photos from ~/Photos/2026-04-07/
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>For each photo:
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>- Extract time, location (GPS), and camera info
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>- Generate a caption describing the scene
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>- Note the context (what was happening at that time based on
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  today&#39;s calendar and messages)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Save as ~/vault/Daily/2026-04-07-photos.md with embedded images.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;&#34;&#34;</span>
+</span></span></code></pre></div><p><strong>Output</strong>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-markdown data-lang=markdown><span style=display:flex><span># Photo Diary — April 7, 2026
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## 08:32 — Morning Coffee
+</span></span></span><span style=display:flex><span>![[IMG_4521.jpg]]
+</span></span><span style=display:flex><span>*Your usual spot at the café. Cappuccino and the morning briefing
+</span></span><span style=display:flex><span>on your laptop. Partly cloudy outside.*
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## 12:15 — Lunch with the Team
+</span></span></span><span style=display:flex><span>![[IMG_4523.jpg]]
+</span></span><span style=display:flex><span>*New restaurant near the office — looks like you tried the
+</span></span><span style=display:flex><span>seafood pasta. David and Sarah in the background.*
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## 18:45 — Sunset Walk
+</span></span></span><span style=display:flex><span>![[IMG_4525.jpg]]
+</span></span><span style=display:flex><span>*Waterfront path near the apartment. 8,421 steps today — this
+</span></span><span style=display:flex><span>walk pushed you past the 8k target. Nice light.*
+</span></span></code></pre></div><h2 id=example-4-autonomous-task-worker>Example 4: Autonomous Task Worker</h2><p><strong>Goal</strong>: Every 5 minutes, check if there are tasks the AI can complete autonomously, and do them.</p><p>This is the most powerful pattern — Claude Code as an autonomous worker:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-markdown data-lang=markdown><span style=display:flex><span># task-worker (runs every 5 minutes)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>1.</span> Scan ~/vault/Cards/inbox/ for new tasks
+</span></span><span style=display:flex><span><span style=color:#66d9ef>2.</span> Triage: classify, set priority, move to active/
+</span></span><span style=display:flex><span><span style=color:#66d9ef>3.</span> Scan ~/vault/Cards/active/ for tasks I can complete:
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>-</span> Research tasks (web search + analysis)
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>-</span> Content generation (drafts, outlines)
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>-</span> Data analysis (read vault data, find patterns)
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>-</span> System maintenance (check logs, clean up)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>4.</span> Pick the highest-priority unblocked task
+</span></span><span style=display:flex><span><span style=color:#66d9ef>5.</span> Execute it (research, write, analyze)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>6.</span> Save output to ~/vault/Output/
+</span></span><span style=display:flex><span><span style=color:#66d9ef>7.</span> Mark task as done if acceptance criteria are met
+</span></span><span style=display:flex><span><span style=color:#66d9ef>8.</span> Log what I did to ~/vault/Log/worker-log.md
+</span></span></code></pre></div><p><strong>Tasks the worker can handle autonomously:</strong></p><ul><li>&ldquo;Research best practices for X&rdquo; → produces a report</li><li>&ldquo;Compare products A, B, C&rdquo; → produces a comparison matrix</li><li>&ldquo;Summarize this week&rsquo;s health data&rdquo; → produces a trend analysis</li><li>&ldquo;Generate 3 title options for this article&rdquo; → produces options</li><li>&ldquo;Check if the deployment script is working&rdquo; → runs tests, reports results</li></ul><p><strong>Tasks that need human input:</strong></p><ul><li>&ldquo;Decide between option A and B&rdquo; → blocked, waits for your decision</li><li>&ldquo;Schedule a meeting with X&rdquo; → blocked, needs your calendar access</li><li>&ldquo;Review this contract&rdquo; → blocked, legal decisions need human judgment</li></ul><p>The worker knows the difference and handles blocking gracefully.</p><h2 id=example-5-weekly-health-report>Example 5: Weekly Health Report</h2><p><strong>Goal</strong>: Every Sunday, analyze the week&rsquo;s health data and produce a trend report.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-markdown data-lang=markdown><span style=display:flex><span># weekly-health-review (runs Sunday 9 AM)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Read health data from the last 7 days.
+</span></span><span style=display:flex><span>Compare to the previous 4 weeks.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Report on:
+</span></span><span style=display:flex><span><span style=color:#66d9ef>1.</span> Sleep quality trend (improving/declining?)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>2.</span> Activity level vs goals
+</span></span><span style=display:flex><span><span style=color:#66d9ef>3.</span> Heart rate variability trend
+</span></span><span style=display:flex><span><span style=color:#66d9ef>4.</span> Any anomalies or concerns
+</span></span><span style=display:flex><span><span style=color:#66d9ef>5.</span> Recommendations for next week
+</span></span></code></pre></div><p><strong>Output</strong>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-markdown data-lang=markdown><span style=display:flex><span># Weekly Health Report — Week of March 31
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Sleep
+</span></span></span><span style=display:flex><span>Average: 7.1h (target: 7.5h) — slightly below target
+</span></span><span style=display:flex><span>Trend: ↗ improving from last week&#39;s 6.8h average
+</span></span><span style=display:flex><span>Deep sleep: 22% (good range: 20-25%)
+</span></span><span style=display:flex><span>Worst night: Tuesday (5.8h — late work session)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Activity
+</span></span></span><span style=display:flex><span>Average daily steps: 8,934 (target: 8,000) ✓
+</span></span><span style=display:flex><span>Active days (&gt;8k steps): 5/7 ✓
+</span></span><span style=display:flex><span>Longest sedentary period: 4.2h on Wednesday
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Heart Rate
+</span></span></span><span style=display:flex><span>Resting average: 59 bpm (your baseline: 58-62)
+</span></span><span style=display:flex><span>HRV average: 48ms (stable, within normal range)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Recommendations
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>1.</span> Tuesday sleep deficit correlates with late screen time.
+</span></span><span style=display:flex><span>   Consider a hard stop at 10:30 PM.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>2.</span> Wednesday sedentary period — set a 2-hour movement reminder.
+</span></span><span style=display:flex><span><span style=color:#66d9ef>3.</span> Overall trend is positive. Keep the evening walk routine.
+</span></span></code></pre></div><h2 id=getting-started>Getting Started</h2><ol><li><strong>Install Claude Code</strong> on your Mac or Linux machine</li><li><strong>Set up a vault directory</strong> (<code>~/vault/</code>) with subdirectories for data, daily notes, and tasks</li><li><strong>Start with one automation</strong> — the morning briefing is the easiest and most immediately useful</li><li><strong>Add more over time</strong> — each automation makes the others more valuable because they share the vault</li></ol><p>The PiOS project provides a complete framework for this kind of personal automation, with plugin architecture, scheduling, and a web dashboard. But you can start with just Claude Code and a few scheduled tasks.</p><h2 id=resources>Resources</h2><ul><li><strong>PiOS</strong>: <a href=https://github.com/pios-ai/pios>github.com/pios-ai/pios</a></li><li><strong>Claude Code</strong>: <a href=https://claude.ai/code>claude.ai/code</a></li><li><strong>Claude Code Scheduled Tasks</strong>: See Claude Code documentation</li></ul><hr><p><em>Part of the PiOS documentation series. PiOS is an open-source Personal Intelligence Operating System for building AI systems that understand your life.</em></p><ul class=pa0></ul></div></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href=https://pios-docs.github.io/>&copy; PiOS — Personal Intelligence Operating System 2026</a><div><div class=ananke-socials></div></div></div></footer></body></html>

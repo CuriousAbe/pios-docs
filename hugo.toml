@@ -11,5 +11,13 @@ theme = 'ananke'
     [markup.goldmark.renderer]
       unsafe = true
 
+[sitemap]
+  changefreq = 'weekly'
+  priority = 0.5
+
 [outputs]
   home = ["HTML", "RSS"]
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'

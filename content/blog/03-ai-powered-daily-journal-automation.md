@@ -8,6 +8,8 @@ target_keywords:
   - obsidian daily notes automation
   - automated journaling with AI
 meta_description: "Build an automated daily journal that pulls data from health apps, messages, and photos, then uses AI to generate personalized daily summaries in Obsidian."
+description: "Build an automated daily journal that pulls data from health apps, messages, and photos, then uses AI to generate personalized daily summaries in Obsidian."
+date: 2026-04-07
 created: 2026-04-07
 word_count: ~2500
 type: seo_article

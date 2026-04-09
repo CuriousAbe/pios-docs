@@ -8,6 +8,7 @@ target_keywords:
   - automated health data analysis
   - Apple Health AI integration
 meta_description: "Build a personal AI health tracking system that analyzes your Apple Health data, detects patterns, and generates actionable health insights automatically."
+description: "Build a personal AI health tracking system that analyzes your Apple Health data, detects patterns, and generates actionable health insights automatically."
 created: 2026-04-07
 word_count: ~2400
 type: seo_article

@@ -8,6 +8,7 @@ target_keywords:
   - build personal AI assistant architecture
   - AI operating system design
 meta_description: "A developer's guide to designing a Personal AI Operating System. Covers the 4-layer architecture, plugin systems, data flow, and lessons from 10 months of real-world operation."
+description: "A developer's guide to designing a Personal AI Operating System. Covers the 4-layer architecture, plugin systems, data flow, and lessons from 10 months of real-world operation."
 created: 2026-04-07
 word_count: ~2800
 type: seo_article

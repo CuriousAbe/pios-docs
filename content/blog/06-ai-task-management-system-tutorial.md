@@ -7,6 +7,8 @@ target_keywords:
   - personal AI project management
   - build AI todo system
 meta_description: "Learn how to build an AI-powered task management system using Markdown cards, automated triage, and Claude. Includes real code examples and architecture decisions."
+description: "Learn how to build an AI-powered task management system using Markdown cards, automated triage, and Claude. Includes real code examples and architecture decisions."
+date: 2026-04-07
 created: 2026-04-07
 word_count: ~2400
 type: seo_article

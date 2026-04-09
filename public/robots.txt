@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://curiousabe.github.io/pios-docs/sitemap.xml
