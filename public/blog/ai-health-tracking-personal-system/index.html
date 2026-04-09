@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>AI Health Tracking: Build a Personal Health Intelligence System | PiOS — Personal Intelligence Operating System</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="AI Health Tracking: Build a Personal Health Intelligence System
+Your Apple Watch collects thousands of health data points every day. Your iPhone tracks your steps, sleep, and screen time. But all this data sits in silos, showing you numbers without context.
+What if AI could analyze your health data daily, spot trends over weeks and months, correlate different metrics, and alert you when something looks off — all automatically, all privately on your machine?">
+    <meta name="generator" content="Hugo 0.160.1">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.efe4d852f731d5d1fbb87718387202a97aafd768cdcdaed0662bbe6982e91824.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://pios-docs.github.io/blog/ai-health-tracking-personal-system/">
+    
+
+    
+    
+    <meta property="og:url" content="https://pios-docs.github.io/blog/ai-health-tracking-personal-system/">
+  <meta property="og:site_name" content="PiOS — Personal Intelligence Operating System">
+  <meta property="og:title" content="AI Health Tracking: Build a Personal Health Intelligence System">
+  <meta property="og:description" content="AI Health Tracking: Build a Personal Health Intelligence System Your Apple Watch collects thousands of health data points every day. Your iPhone tracks your steps, sleep, and screen time. But all this data sits in silos, showing you numbers without context.
+What if AI could analyze your health data daily, spot trends over weeks and months, correlate different metrics, and alert you when something looks off — all automatically, all privately on your machine?">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+
+  <meta itemprop="name" content="AI Health Tracking: Build a Personal Health Intelligence System">
+  <meta itemprop="description" content="AI Health Tracking: Build a Personal Health Intelligence System Your Apple Watch collects thousands of health data points every day. Your iPhone tracks your steps, sleep, and screen time. But all this data sits in silos, showing you numbers without context.
+What if AI could analyze your health data daily, spot trends over weeks and months, correlate different metrics, and alert you when something looks off — all automatically, all privately on your machine?">
+  <meta itemprop="wordCount" content="1212">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI Health Tracking: Build a Personal Health Intelligence System">
+  <meta name="twitter:description" content="AI Health Tracking: Build a Personal Health Intelligence System Your Apple Watch collects thousands of health data points every day. Your iPhone tracks your steps, sleep, and screen time. But all this data sits in silos, showing you numbers without context.
+What if AI could analyze your health data daily, spot trends over weeks and months, correlate different metrics, and alert you when something looks off — all automatically, all privately on your machine?">
+
+      
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production is-page is-page page-10-ai-health-tracking-personal-system">
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        PiOS — Personal Intelligence Operating System
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+
+  <article class="page-10-ai-health-tracking-personal-system flex-l mw7 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Blogs
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">AI Health Tracking: Build a Personal Health Intelligence System</h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-100-l"><h1 id="ai-health-tracking-build-a-personal-health-intelligence-system">AI Health Tracking: Build a Personal Health Intelligence System</h1>
+<p>Your Apple Watch collects thousands of health data points every day. Your iPhone tracks your steps, sleep, and screen time. But all this data sits in silos, showing you numbers without context.</p>
+<p>What if AI could analyze your health data daily, spot trends over weeks and months, correlate different metrics, and alert you when something looks off — all automatically, all privately on your machine?</p>
+<p>This guide shows you how to build a personal health intelligence system that turns raw health data into actionable insights.</p>
+<h2 id="what-health-ai-can-actually-do-and-what-it-cant">What Health AI Can Actually Do (And What It Can&rsquo;t)</h2>
+<p>Let&rsquo;s be clear: this is <strong>not</strong> medical diagnosis. This is pattern recognition and trend analysis on your own data, for your own awareness.</p>
+<p><strong>What it can do:</strong></p>
+<ul>
+<li>Track trends: &ldquo;Your sleep quality has declined 15% over the past two weeks&rdquo;</li>
+<li>Correlate metrics: &ldquo;On days you walk 8,000+ steps, your sleep quality is 20% better&rdquo;</li>
+<li>Detect anomalies: &ldquo;Your resting heart rate jumped 8 bpm today — unusual for you&rdquo;</li>
+<li>Generate summaries: &ldquo;Weekly health report with trends and recommendations&rdquo;</li>
+<li>Remind and motivate: &ldquo;You&rsquo;ve hit your step goal 5 days this week — one more for a perfect week&rdquo;</li>
+</ul>
+<p><strong>What it cannot do:</strong></p>
+<ul>
+<li>Diagnose conditions</li>
+<li>Replace medical advice</li>
+<li>Interpret lab results with clinical accuracy</li>
+<li>Make treatment recommendations</li>
+</ul>
+<p>Use this system for self-awareness and habit optimization. For medical decisions, talk to your doctor — and bring your trend data to make the conversation more productive.</p>
+<h2 id="architecture">Architecture</h2>
+<pre tabindex="0"><code>┌────────────────┐     ┌──────────────┐     ┌───────────────┐
+│  Apple Health   │────▶│  Exporter    │────▶│  Your Vault   │
+│  (iPhone/Watch) │     │  (daily job) │     │  (Markdown)   │
+└────────────────┘     └──────────────┘     └───────┬───────┘
+                                                     │
+                                              ┌──────┴───────┐
+                                              │  AI Agents   │
+                                              │  (analysis)  │
+                                              └──────┬───────┘
+                                                     │
+                                              ┌──────┴───────┐
+                                              │  Reports     │
+                                              │  (daily/     │
+                                              │   weekly)    │
+                                              └──────────────┘
+</code></pre><h2 id="step-1-export-apple-health-data">Step 1: Export Apple Health Data</h2>
+<p>The cleanest approach is the <strong>Health Auto Export</strong> iOS app. It runs in the background and exports your health data as JSON to a local server or iCloud folder.</p>
+<p>Configure it to export daily:</p>
+<ul>
+<li>Sleep analysis</li>
+<li>Step count</li>
+<li>Heart rate (resting, walking, HRV)</li>
+<li>Active energy</li>
+<li>Workouts</li>
+<li>Blood oxygen (if available)</li>
+<li>Time in daylight</li>
+</ul>
+<p>Alternative: Apple&rsquo;s native Health export (XML format, manual, but free).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># parse_health_export.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> date
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>EXPORT_DIR <span style="color:#f92672">=</span> Path<span style="color:#f92672">.</span>home() <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;health-auto-export&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parse_daily</span>(target_date: date) <span style="color:#f92672">-&gt;</span> dict:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Parse Health Auto Export JSON for a specific date.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    export_file <span style="color:#f92672">=</span> EXPORT_DIR <span style="color:#f92672">/</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>target_date<span style="color:#f92672">.</span>isoformat()<span style="color:#e6db74">}</span><span style="color:#e6db74">.json&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> export_file<span style="color:#f92672">.</span>exists():
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    raw <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(export_file<span style="color:#f92672">.</span>read_text())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;date&#34;</span>: target_date<span style="color:#f92672">.</span>isoformat(),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;sleep&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;duration_hours&#34;</span>: raw<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;sleep_duration&#34;</span>, <span style="color:#ae81ff">0</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">3600</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;deep_minutes&#34;</span>: raw<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;sleep_deep&#34;</span>, <span style="color:#ae81ff">0</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">60</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;rem_minutes&#34;</span>: raw<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;sleep_rem&#34;</span>, <span style="color:#ae81ff">0</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">60</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;awakenings&#34;</span>: raw<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;sleep_awakenings&#34;</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;activity&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;steps&#34;</span>: raw<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;step_count&#34;</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;active_energy_kcal&#34;</span>: raw<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;active_energy&#34;</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;exercise_minutes&#34;</span>: raw<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;exercise_time&#34;</span>, <span style="color:#ae81ff">0</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">60</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;stand_hours&#34;</span>: raw<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;stand_hours&#34;</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;heart&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;resting_hr&#34;</span>: raw<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;resting_heart_rate&#34;</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;walking_hr&#34;</span>: raw<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;walking_heart_rate&#34;</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;hrv_ms&#34;</span>: raw<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;heart_rate_variability&#34;</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;other&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;sunlight_minutes&#34;</span>: raw<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;time_in_daylight&#34;</span>, <span style="color:#ae81ff">0</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">60</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;blood_oxygen_pct&#34;</span>: raw<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;blood_oxygen&#34;</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><h2 id="step-2-daily-health-report-agent">Step 2: Daily Health Report Agent</h2>
+<p>This agent runs every morning, reads today&rsquo;s health data + the last 30 days, and generates a report.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> anthropic
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> date, timedelta
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>client <span style="color:#f92672">=</span> anthropic<span style="color:#f92672">.</span>Anthropic()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_daily_health_report</span>():
+</span></span><span style="display:flex;"><span>    today <span style="color:#f92672">=</span> date<span style="color:#f92672">.</span>today()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Load today&#39;s data</span>
+</span></span><span style="display:flex;"><span>    today_data <span style="color:#f92672">=</span> parse_daily(today)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Load 30-day history for trend analysis</span>
+</span></span><span style="display:flex;"><span>    history <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">31</span>):
+</span></span><span style="display:flex;"><span>        d <span style="color:#f92672">=</span> today <span style="color:#f92672">-</span> timedelta(days<span style="color:#f92672">=</span>i)
+</span></span><span style="display:flex;"><span>        day_data <span style="color:#f92672">=</span> parse_daily(d)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> day_data:
+</span></span><span style="display:flex;"><span>            history<span style="color:#f92672">.</span>append(day_data)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Calculate baselines</span>
+</span></span><span style="display:flex;"><span>    baselines <span style="color:#f92672">=</span> calculate_baselines(history)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    prompt <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#34;&#34;Analyze today&#39;s health data against the 30-day baseline.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Today&#39;s data:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{</span>json<span style="color:#f92672">.</span>dumps(today_data, indent<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">30-day baselines:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Avg sleep: </span><span style="color:#e6db74">{</span>baselines[<span style="color:#e6db74">&#39;avg_sleep&#39;</span>]<span style="color:#e6db74">:</span><span style="color:#e6db74">.1f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">h
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Avg steps: </span><span style="color:#e6db74">{</span>baselines[<span style="color:#e6db74">&#39;avg_steps&#39;</span>]<span style="color:#e6db74">:</span><span style="color:#e6db74">.0f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Avg resting HR: </span><span style="color:#e6db74">{</span>baselines[<span style="color:#e6db74">&#39;avg_resting_hr&#39;</span>]<span style="color:#e6db74">:</span><span style="color:#e6db74">.0f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> bpm
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Avg HRV: </span><span style="color:#e6db74">{</span>baselines[<span style="color:#e6db74">&#39;avg_hrv&#39;</span>]<span style="color:#e6db74">:</span><span style="color:#e6db74">.0f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> ms
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Avg deep sleep: </span><span style="color:#e6db74">{</span>baselines[<span style="color:#e6db74">&#39;avg_deep_sleep&#39;</span>]<span style="color:#e6db74">:</span><span style="color:#e6db74">.0f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> min
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Recent trends (last 7 days vs previous 7):
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Sleep: </span><span style="color:#e6db74">{</span>baselines[<span style="color:#e6db74">&#39;sleep_trend&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Steps: </span><span style="color:#e6db74">{</span>baselines[<span style="color:#e6db74">&#39;steps_trend&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- HR: </span><span style="color:#e6db74">{</span>baselines[<span style="color:#e6db74">&#39;hr_trend&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- HRV: </span><span style="color:#e6db74">{</span>baselines[<span style="color:#e6db74">&#39;hrv_trend&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Generate a concise health report:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">1. Today&#39;s highlights (what stands out vs baseline)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">2. Alerts (anything &gt;1.5 standard deviations from baseline)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">3. 7-day trends (improving/declining/stable)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">4. One actionable recommendation
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Keep it under 300 words. Use plain language, not medical jargon.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Be specific with numbers. Don&#39;t be alarming about normal variation.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    response <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>messages<span style="color:#f92672">.</span>create(
+</span></span><span style="display:flex;"><span>        model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;claude-sonnet-4-6&#34;</span>,
+</span></span><span style="display:flex;"><span>        max_tokens<span style="color:#f92672">=</span><span style="color:#ae81ff">800</span>,
+</span></span><span style="display:flex;"><span>        messages<span style="color:#f92672">=</span>[{<span style="color:#e6db74">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>, <span style="color:#e6db74">&#34;content&#34;</span>: prompt}]
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> response<span style="color:#f92672">.</span>content[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>text
+</span></span></code></pre></div><h2 id="step-3-pattern-detection-agent">Step 3: Pattern Detection Agent</h2>
+<p>This agent runs weekly and looks for correlations in your data that you might not notice.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">detect_patterns</span>(history_90_days):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Find correlations between health metrics and behaviors.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Example correlations to test:</span>
+</span></span><span style="display:flex;"><span>    correlations <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>        (<span style="color:#e6db74">&#34;steps &gt; 8000&#34;</span>, <span style="color:#e6db74">&#34;sleep_quality&#34;</span>),
+</span></span><span style="display:flex;"><span>        (<span style="color:#e6db74">&#34;sunlight &gt; 60min&#34;</span>, <span style="color:#e6db74">&#34;mood_proxy&#34;</span>),  <span style="color:#75715e"># HRV as mood proxy</span>
+</span></span><span style="display:flex;"><span>        (<span style="color:#e6db74">&#34;exercise_minutes &gt; 30&#34;</span>, <span style="color:#e6db74">&#34;next_day_resting_hr&#34;</span>),
+</span></span><span style="display:flex;"><span>        (<span style="color:#e6db74">&#34;late_screen_time&#34;</span>, <span style="color:#e6db74">&#34;sleep_onset_latency&#34;</span>),
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    findings <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> behavior, outcome <span style="color:#f92672">in</span> correlations:
+</span></span><span style="display:flex;"><span>        days_with <span style="color:#f92672">=</span> [d <span style="color:#66d9ef">for</span> d <span style="color:#f92672">in</span> history_90_days <span style="color:#66d9ef">if</span> meets_criteria(d, behavior)]
+</span></span><span style="display:flex;"><span>        days_without <span style="color:#f92672">=</span> [d <span style="color:#66d9ef">for</span> d <span style="color:#f92672">in</span> history_90_days <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> meets_criteria(d, behavior)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> len(days_with) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">and</span> len(days_without) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span>:
+</span></span><span style="display:flex;"><span>            avg_with <span style="color:#f92672">=</span> mean([get_metric(d, outcome) <span style="color:#66d9ef">for</span> d <span style="color:#f92672">in</span> days_with])
+</span></span><span style="display:flex;"><span>            avg_without <span style="color:#f92672">=</span> mean([get_metric(d, outcome) <span style="color:#66d9ef">for</span> d <span style="color:#f92672">in</span> days_without])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> abs(avg_with <span style="color:#f92672">-</span> avg_without) <span style="color:#f92672">/</span> avg_without <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0.1</span>:  <span style="color:#75715e"># &gt;10% difference</span>
+</span></span><span style="display:flex;"><span>                findings<span style="color:#f92672">.</span>append({
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;behavior&#34;</span>: behavior,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;outcome&#34;</span>: outcome,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;with_avg&#34;</span>: avg_with,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;without_avg&#34;</span>: avg_without,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;difference_pct&#34;</span>: (avg_with <span style="color:#f92672">-</span> avg_without) <span style="color:#f92672">/</span> avg_without <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;sample_size&#34;</span>: len(days_with) <span style="color:#f92672">+</span> len(days_without),
+</span></span><span style="display:flex;"><span>                })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> findings
+</span></span></code></pre></div><h2 id="step-4-medication-and-supplement-tracking">Step 4: Medication and Supplement Tracking</h2>
+<p>If you take regular medications or supplements, track their effects:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>date: 2026-04-07
+</span></span><span style="display:flex;"><span>type: health-log
+</span></span><span style="display:flex;"><span>supplements:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-</span> name: Vitamin D
+</span></span><span style="display:flex;"><span>    dose: 2000 IU
+</span></span><span style="display:flex;"><span>    time: morning
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-</span> name: Magnesium
+</span></span><span style="display:flex;"><span>    dose: 400mg
+</span></span><span style="display:flex;"><span>    time: evening
+</span></span><span style="display:flex;"><span>medications:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-</span> name: Adalimumab
+</span></span><span style="display:flex;"><span>    dose: 40mg
+</span></span><span style="display:flex;"><span>    schedule: biweekly
+</span></span><span style="display:flex;"><span>    last_dose: 2026-04-01
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><p>The AI can then correlate supplement timing with health metrics:</p>
+<blockquote>
+<p>&ldquo;On days you take magnesium before bed, your deep sleep averages 12 minutes longer (95 min vs 83 min, n=45 days). This is a meaningful difference.&rdquo;</p>
+</blockquote>
+<h2 id="step-5-weekly-and-monthly-reports">Step 5: Weekly and Monthly Reports</h2>
+<p><strong>Weekly report</strong> (runs Sunday):</p>
+<ul>
+<li>7-day averages vs goals</li>
+<li>Best/worst days and possible reasons</li>
+<li>Trend arrows for key metrics</li>
+<li>One focus area for next week</li>
+</ul>
+<p><strong>Monthly report</strong> (runs 1st of month):</p>
+<ul>
+<li>30-day trends with charts (generated as ASCII or linked images)</li>
+<li>Correlation findings</li>
+<li>Comparison to previous month</li>
+<li>Seasonal adjustments (daylight, temperature effects)</li>
+</ul>
+<h2 id="sample-daily-report">Sample Daily Report</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span># Health Report — April 7, 2026
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Today
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Sleep: 7h 12m (baseline: 7.3h) — normal ✓
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Deep sleep: 98 min (baseline: 88 min) — above average ⬆
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Steps: 6,421 (goal: 8,000) — below target ⬇
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Resting HR: 59 bpm (baseline: 60) — normal ✓
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> HRV: 52 ms (baseline: 48) — above average ⬆
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Alerts
+</span></span></span><span style="display:flex;"><span>None today. All metrics within normal range.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 7-Day Trends
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Sleep: ↗ improving (6.8h → 7.2h average)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Activity: ↘ declining (9.1k → 7.2k avg steps)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Heart: → stable
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Recommendation
+</span></span></span><span style="display:flex;"><span>Your step count has been trending down this week (7.2k avg vs 9.1k
+</span></span><span style="display:flex;"><span>last week). Weather has been rainy — consider indoor alternatives
+</span></span><span style="display:flex;"><span>on low-step days. You&#39;re 1,579 steps short of today&#39;s goal; a
+</span></span><span style="display:flex;"><span>15-minute evening walk would close the gap.
+</span></span></code></pre></div><h2 id="privacy-considerations">Privacy Considerations</h2>
+<p>Health data is among the most sensitive personal information. This system:</p>
+<ul>
+<li><strong>Stores everything locally</strong> — Markdown files on your machine</li>
+<li><strong>Sends minimal context to LLM</strong> — Only today&rsquo;s numbers and aggregate baselines, not your full health history</li>
+<li><strong>Never includes identifying info</strong> — The LLM doesn&rsquo;t know your name, age, or medical history</li>
+<li><strong>Optional: fully local</strong> — Use Ollama for zero-network health analysis</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><strong>PiOS</strong>: Includes a health pipeline plugin — <a href="https://github.com/pios-ai/pios">github.com/pios-ai/pios</a></li>
+<li><strong>Health Auto Export</strong>: iOS app for automated Apple Health export</li>
+<li><strong>Ollama</strong>: Local LLM for maximum privacy — <a href="https://ollama.com">ollama.com</a></li>
+</ul>
+<hr>
+<p><em>Part of the PiOS documentation series. PiOS is an open-source Personal Intelligence Operating System for building AI systems that understand your life.</em></p>
+<ul class="pa0">
+  
+</ul>
+
+      
+    </div></article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://pios-docs.github.io/" >
+    &copy;  PiOS — Personal Intelligence Operating System 2026 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

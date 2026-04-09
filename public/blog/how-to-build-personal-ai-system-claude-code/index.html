@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>How to Build a Personal AI System with Claude Code (2026 Guide) | PiOS — Personal Intelligence Operating System</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="How to Build a Personal AI System with Claude Code
+Most people use AI for one-off tasks: write an email, summarize a document, answer a question. But what happens when you give AI persistent context about your entire life?
+After 10 months of building PiOS — a Personal Intelligence Operating System — I can tell you: the difference is transformative. An AI that knows your schedule, health data, social context, and ongoing projects doesn&rsquo;t just answer questions. It anticipates needs, connects dots you missed, and becomes a genuine thinking partner.">
+    <meta name="generator" content="Hugo 0.160.1">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.efe4d852f731d5d1fbb87718387202a97aafd768cdcdaed0662bbe6982e91824.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://pios-docs.github.io/blog/how-to-build-personal-ai-system-claude-code/">
+    
+
+    
+    
+    <meta property="og:url" content="https://pios-docs.github.io/blog/how-to-build-personal-ai-system-claude-code/">
+  <meta property="og:site_name" content="PiOS — Personal Intelligence Operating System">
+  <meta property="og:title" content="How to Build a Personal AI System with Claude Code (2026 Guide)">
+  <meta property="og:description" content="How to Build a Personal AI System with Claude Code Most people use AI for one-off tasks: write an email, summarize a document, answer a question. But what happens when you give AI persistent context about your entire life?
+After 10 months of building PiOS — a Personal Intelligence Operating System — I can tell you: the difference is transformative. An AI that knows your schedule, health data, social context, and ongoing projects doesn’t just answer questions. It anticipates needs, connects dots you missed, and becomes a genuine thinking partner.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+
+  <meta itemprop="name" content="How to Build a Personal AI System with Claude Code (2026 Guide)">
+  <meta itemprop="description" content="How to Build a Personal AI System with Claude Code Most people use AI for one-off tasks: write an email, summarize a document, answer a question. But what happens when you give AI persistent context about your entire life?
+After 10 months of building PiOS — a Personal Intelligence Operating System — I can tell you: the difference is transformative. An AI that knows your schedule, health data, social context, and ongoing projects doesn’t just answer questions. It anticipates needs, connects dots you missed, and becomes a genuine thinking partner.">
+  <meta itemprop="wordCount" content="1411">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to Build a Personal AI System with Claude Code (2026 Guide)">
+  <meta name="twitter:description" content="How to Build a Personal AI System with Claude Code Most people use AI for one-off tasks: write an email, summarize a document, answer a question. But what happens when you give AI persistent context about your entire life?
+After 10 months of building PiOS — a Personal Intelligence Operating System — I can tell you: the difference is transformative. An AI that knows your schedule, health data, social context, and ongoing projects doesn’t just answer questions. It anticipates needs, connects dots you missed, and becomes a genuine thinking partner.">
+
+      
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production is-page is-page page-01-how-to-build-personal-ai-system-claude-code">
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        PiOS — Personal Intelligence Operating System
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+
+  <article class="page-01-how-to-build-personal-ai-system-claude-code flex-l mw7 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Blogs
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">How to Build a Personal AI System with Claude Code (2026 Guide)</h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-100-l"><h1 id="how-to-build-a-personal-ai-system-with-claude-code">How to Build a Personal AI System with Claude Code</h1>
+<p>Most people use AI for one-off tasks: write an email, summarize a document, answer a question. But what happens when you give AI persistent context about your entire life?</p>
+<p>After 10 months of building PiOS — a Personal Intelligence Operating System — I can tell you: the difference is transformative. An AI that knows your schedule, health data, social context, and ongoing projects doesn&rsquo;t just answer questions. It anticipates needs, connects dots you missed, and becomes a genuine thinking partner.</p>
+<p>This guide shows you how to build your own personal AI system from scratch using Claude Code and a local-first architecture. No cloud dependencies. No subscriptions beyond your AI API key. Everything runs on your machine.</p>
+<h2 id="why-build-a-personal-ai-system">Why Build a Personal AI System?</h2>
+<p>The AI tools most people use have a fundamental limitation: <strong>no memory across sessions</strong>. Every conversation starts from zero. You re-explain your situation, your preferences, your constraints — every single time.</p>
+<p>A personal AI system solves this by maintaining persistent context:</p>
+<ul>
+<li><strong>Your health data</strong> (sleep, exercise, medications)</li>
+<li><strong>Your social interactions</strong> (messages, meetings, relationship context)</li>
+<li><strong>Your projects and tasks</strong> (goals, deadlines, blockers)</li>
+<li><strong>Your daily journal</strong> (reflections, decisions, emotional state)</li>
+<li><strong>Your knowledge base</strong> (notes, research, bookmarks)</li>
+</ul>
+<p>When AI has access to all of this, its output quality jumps dramatically. Instead of generic advice, you get recommendations calibrated to your specific situation.</p>
+<h2 id="architecture-overview">Architecture Overview</h2>
+<p>A personal AI system has four layers:</p>
+<pre tabindex="0"><code>┌─────────────────────────────┐
+│     Agent Layer (AI)        │  ← Decision-making, analysis, generation
+├─────────────────────────────┤
+│     Knowledge Layer         │  ← Unified vault: Markdown + metadata
+├─────────────────────────────┤
+│     Pipeline Layer          │  ← Data ingestion from life sources
+├─────────────────────────────┤
+│     Hardware Layer           │  ← Your Mac/Linux machine
+└─────────────────────────────┘
+</code></pre><h3 id="layer-1-hardware">Layer 1: Hardware</h3>
+<p>You need a machine that&rsquo;s always on (or at least on during your waking hours). A Mac Mini or any Linux box works perfectly. The system is lightweight — no GPU required. All heavy computation happens via API calls to Claude or other LLMs.</p>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>macOS or Linux</li>
+<li>Python 3.11+</li>
+<li>8GB+ RAM (for local processing)</li>
+<li>An Anthropic API key (or OpenAI, or local Ollama)</li>
+</ul>
+<h3 id="layer-2-pipelines-data-ingestion">Layer 2: Pipelines (Data Ingestion)</h3>
+<p>This is where you connect your life data sources. Each pipeline is a script that runs on a schedule, extracts data, and writes it as Markdown files into your vault.</p>
+<p><strong>Common pipelines:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Source</th>
+          <th>What it captures</th>
+          <th>Schedule</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Apple Health</td>
+          <td>Steps, sleep, heart rate, medications</td>
+          <td>Daily</td>
+      </tr>
+      <tr>
+          <td>WeChat/iMessage</td>
+          <td>Chat summaries, key decisions</td>
+          <td>Daily</td>
+      </tr>
+      <tr>
+          <td>Photos (Immich/iCloud)</td>
+          <td>Photo diary with GPS/EXIF</td>
+          <td>Daily</td>
+      </tr>
+      <tr>
+          <td>AI chat logs (ChatGPT)</td>
+          <td>Conversation summaries</td>
+          <td>Daily</td>
+      </tr>
+      <tr>
+          <td>Calendar</td>
+          <td>Events, meetings</td>
+          <td>Hourly</td>
+      </tr>
+      <tr>
+          <td>Browser history</td>
+          <td>Research topics</td>
+          <td>Daily</td>
+      </tr>
+  </tbody>
+</table>
+<p>Each pipeline follows the same pattern:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Example: Apple Health pipeline</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SourceAppleHealth</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 1. Read raw data (exported JSON, database, API)</span>
+</span></span><span style="display:flex;"><span>        raw <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>read_health_export()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 2. Transform into structured data</span>
+</span></span><span style="display:flex;"><span>        daily <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>aggregate_by_day(raw)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 3. Write as Markdown document</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>write_document(
+</span></span><span style="display:flex;"><span>            title<span style="color:#f92672">=</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Health Report </span><span style="color:#e6db74">{</span>today<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>,
+</span></span><span style="display:flex;"><span>            content<span style="color:#f92672">=</span>self<span style="color:#f92672">.</span>format_report(daily),
+</span></span><span style="display:flex;"><span>            metadata<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;source&#34;</span>: <span style="color:#e6db74">&#34;apple-health&#34;</span>, <span style="color:#e6db74">&#34;date&#34;</span>: today}
+</span></span><span style="display:flex;"><span>        )
+</span></span></code></pre></div><p><strong>Key design principle:</strong> Every pipeline outputs Markdown with YAML frontmatter. This makes the data human-readable (you can browse it in Obsidian) and machine-parseable (AI agents can query it).</p>
+<h3 id="layer-3-knowledge-vault">Layer 3: Knowledge Vault</h3>
+<p>The vault is where all your data lives. We use Obsidian-compatible Markdown files organized in a simple directory structure:</p>
+<pre tabindex="0"><code>vault/
+├── Daily/          # Auto-generated daily digests
+├── Health/         # Health pipeline output
+├── Social/         # Communication summaries
+├── Projects/       # Project notes and status
+├── Journal/        # Personal reflections
+└── Knowledge/      # Research, bookmarks, learning
+</code></pre><p>Each file has YAML frontmatter for metadata:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: Daily Health Report
+</span></span><span style="display:flex;"><span>date: 2026-04-07
+</span></span><span style="display:flex;"><span>source: apple-health
+</span></span><span style="display:flex;"><span>tags: [health, daily]
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Sleep
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Duration: 7h 23m
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Deep sleep: 1h 45m
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Score: 82/100
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Activity
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Steps: 8,421
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Active energy: 342 kcal
+</span></span></code></pre></div><p>For search, use SQLite with full-text search (FTS5). Index the frontmatter fields and content of every document. This gives you sub-second search across thousands of documents.</p>
+<h3 id="layer-4-ai-agents">Layer 4: AI Agents</h3>
+<p>This is where the magic happens. Agents are AI-powered scripts that read from your vault, reason about the data, and take actions.</p>
+<p><strong>Types of agents:</strong></p>
+<ol>
+<li><strong>Digest agents</strong> — Summarize daily data into briefings</li>
+<li><strong>Analysis agents</strong> — Spot patterns (health trends, social dynamics)</li>
+<li><strong>Task agents</strong> — Manage your to-do list, triage new items</li>
+<li><strong>Creative agents</strong> — Generate content, draft communications</li>
+</ol>
+<p>Here&rsquo;s a simplified agent architecture:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AgentDailyDigest</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 1. Gather today&#39;s data from vault</span>
+</span></span><span style="display:flex;"><span>        health <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>vault<span style="color:#f92672">.</span>search(source<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apple-health&#34;</span>, date<span style="color:#f92672">=</span>today)
+</span></span><span style="display:flex;"><span>        social <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>vault<span style="color:#f92672">.</span>search(source<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wechat&#34;</span>, date<span style="color:#f92672">=</span>today)
+</span></span><span style="display:flex;"><span>        tasks <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>vault<span style="color:#f92672">.</span>search(type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;task&#34;</span>, status<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;active&#34;</span>)
+</span></span><span style="display:flex;"><span>        journal <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>vault<span style="color:#f92672">.</span>search(type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;journal&#34;</span>, date<span style="color:#f92672">=</span>yesterday)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 2. Build context for LLM</span>
+</span></span><span style="display:flex;"><span>        context <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>build_context(health, social, tasks, journal)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 3. Generate digest</span>
+</span></span><span style="display:flex;"><span>        digest <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>llm<span style="color:#f92672">.</span>generate(
+</span></span><span style="display:flex;"><span>            system<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;You are a personal AI assistant...&#34;</span>,
+</span></span><span style="display:flex;"><span>            user<span style="color:#f92672">=</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Generate today&#39;s briefing:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{</span>context<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 4. Write to vault</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>vault<span style="color:#f92672">.</span>write(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Daily/</span><span style="color:#e6db74">{</span>today<span style="color:#e6db74">}</span><span style="color:#e6db74">.md&#34;</span>, digest)
+</span></span></code></pre></div><h2 id="setting-up-with-claude-code">Setting Up with Claude Code</h2>
+<p>Claude Code is ideal for this because it can:</p>
+<ul>
+<li>Read and write local files</li>
+<li>Run shell commands</li>
+<li>Execute Python scripts</li>
+<li>Maintain context across a session</li>
+</ul>
+<h3 id="step-1-initialize-your-vault">Step 1: Initialize Your Vault</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p ~/vault/<span style="color:#f92672">{</span>Daily,Health,Social,Projects,Journal,Knowledge<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>cd ~/vault
+</span></span><span style="display:flex;"><span>git init
+</span></span></code></pre></div><h3 id="step-2-create-your-first-pipeline">Step 2: Create Your First Pipeline</h3>
+<p>Start with the simplest pipeline: a daily journal prompt. Create <code>scripts/daily-journal.py</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python3</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;Generate a structured daily journal entry.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> datetime
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>today <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>date<span style="color:#f92672">.</span>today()<span style="color:#f92672">.</span>isoformat()
+</span></span><span style="display:flex;"><span>vault_path <span style="color:#f92672">=</span> Path<span style="color:#f92672">.</span>home() <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;vault&#34;</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;Journal&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>template <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#34;&#34;---
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">date: </span><span style="color:#e6db74">{</span>today<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">type: journal
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">---
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Journal — </span><span style="color:#e6db74">{</span>today<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">## What happened today?
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">## What am I thinking about?
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">## What needs attention tomorrow?
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>output <span style="color:#f92672">=</span> vault_path <span style="color:#f92672">/</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>today<span style="color:#e6db74">}</span><span style="color:#e6db74">.md&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> output<span style="color:#f92672">.</span>exists():
+</span></span><span style="display:flex;"><span>    output<span style="color:#f92672">.</span>write_text(template)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Created journal entry: </span><span style="color:#e6db74">{</span>output<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div><h3 id="step-3-add-a-health-pipeline">Step 3: Add a Health Pipeline</h3>
+<p>If you use Apple Health, export your data via the Health Auto Export app (or use the Apple Health XML export). Create a pipeline that parses this data daily.</p>
+<h3 id="step-4-set-up-claude-code-as-your-agent">Step 4: Set Up Claude Code as Your Agent</h3>
+<p>The simplest way to start: use Claude Code&rsquo;s scheduled tasks or cron to run a morning briefing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># crontab -e</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">7</span> * * * cd ~/vault <span style="color:#f92672">&amp;&amp;</span> claude-code <span style="color:#e6db74">&#34;Read today&#39;s health data, journal, and tasks. Generate a morning briefing.&#34;</span>
+</span></span></code></pre></div><h3 id="step-5-add-a-task-management-system">Step 5: Add a Task Management System</h3>
+<p>Use Markdown files with frontmatter as task cards:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>type: task
+</span></span><span style="display:flex;"><span>status: active
+</span></span><span style="display:flex;"><span>priority: 2
+</span></span><span style="display:flex;"><span>created: 2026-04-07
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Research home automation options
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Compare smart home platforms for a new apartment setup.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Acceptance Criteria
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">- [ ]</span> Compare at least 3 platforms
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">- [ ]</span> Cost analysis
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">- [ ]</span> Compatibility with existing devices
+</span></span></code></pre></div><p>Claude Code can triage these, update priorities, and track progress autonomously.</p>
+<h2 id="scaling-up-from-scripts-to-system">Scaling Up: From Scripts to System</h2>
+<p>Once you have the basics working, you&rsquo;ll naturally want to:</p>
+<ol>
+<li><strong>Add more pipelines</strong> — Every data source you connect makes the AI smarter</li>
+<li><strong>Build specialized agents</strong> — Health monitoring, financial tracking, content creation</li>
+<li><strong>Create a dashboard</strong> — A web UI to see your system&rsquo;s status at a glance</li>
+<li><strong>Set up autonomous operation</strong> — Let agents run on schedules without your intervention</li>
+</ol>
+<p>This is the journey from &ldquo;scattered scripts&rdquo; to &ldquo;operating system.&rdquo; The key insight: <strong>the value compounds</strong>. Each new data source makes every agent smarter, because they all share the same knowledge vault.</p>
+<h2 id="privacy-and-security">Privacy and Security</h2>
+<p>A personal AI system handles your most sensitive data. Essential safeguards:</p>
+<ul>
+<li><strong>Local-first</strong>: All data stays on your machine. No cloud sync for sensitive data.</li>
+<li><strong>API calls only</strong>: LLM APIs receive context snippets, not your entire vault.</li>
+<li><strong>Git for versioning</strong>: Track every change. Easy rollback if something goes wrong.</li>
+<li><strong>Encryption at rest</strong>: Use FileVault (macOS) or LUKS (Linux) for disk encryption.</li>
+<li><strong>No third-party access</strong>: Your vault, your rules.</li>
+</ul>
+<h2 id="common-pitfalls">Common Pitfalls</h2>
+<ol>
+<li><strong>Starting too big</strong> — Begin with one pipeline and one agent. Add complexity gradually.</li>
+<li><strong>Over-engineering</strong> — Markdown files + cron jobs beats a complex microservices architecture for a personal system.</li>
+<li><strong>Ignoring data quality</strong> — Garbage in, garbage out. Make sure your pipelines produce clean, structured data.</li>
+<li><strong>Not using the system</strong> — The AI needs your input (journal entries, task updates) to be useful. Build habits around it.</li>
+</ol>
+<h2 id="whats-next">What&rsquo;s Next?</h2>
+<p>PiOS is an open-source implementation of this architecture. It provides:</p>
+<ul>
+<li>A plugin system for pipelines and agents</li>
+<li>A document vault with full-text search</li>
+<li>A web dashboard for monitoring</li>
+<li>CLI tools for management</li>
+<li>Docker deployment for easy setup</li>
+</ul>
+<p>Check out the <a href="https://github.com/pios-ai/pios">PiOS GitHub repository</a> for the reference implementation, or start building your own from the principles in this guide.</p>
+<p>The most important step is the first one: pick one data source, write one pipeline, and see what happens when AI has context about your life. You&rsquo;ll be surprised how quickly it becomes indispensable.</p>
+<hr>
+<p><em>This is part of the PiOS documentation series. PiOS is an open-source Personal Intelligence Operating System — a methodology and reference implementation for building AI systems that understand your life.</em></p>
+<ul class="pa0">
+  
+</ul>
+
+      
+    </div></article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://pios-docs.github.io/" >
+    &copy;  PiOS — Personal Intelligence Operating System 2026 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

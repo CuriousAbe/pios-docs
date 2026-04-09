@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>How to Build an AI-Powered Daily Journal with Claude Code and Obsidian | PiOS — Personal Intelligence Operating System</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="How to Build an AI-Powered Daily Journal with Claude Code and Obsidian
+Journaling is one of the highest-leverage habits for self-awareness and personal growth. But most people abandon it within weeks because it&rsquo;s too time-consuming.
+What if your journal wrote itself?
+Not a generic AI summary — a personalized daily entry that pulls from your actual health data, messages, photos, and activities. An entry that captures what happened, why it mattered, and what patterns are emerging — with minimal effort from you.">
+    <meta name="generator" content="Hugo 0.160.1">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.efe4d852f731d5d1fbb87718387202a97aafd768cdcdaed0662bbe6982e91824.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://pios-docs.github.io/blog/ai-powered-daily-journal-automation/">
+    
+
+    
+    
+    <meta property="og:url" content="https://pios-docs.github.io/blog/ai-powered-daily-journal-automation/">
+  <meta property="og:site_name" content="PiOS — Personal Intelligence Operating System">
+  <meta property="og:title" content="How to Build an AI-Powered Daily Journal with Claude Code and Obsidian">
+  <meta property="og:description" content="How to Build an AI-Powered Daily Journal with Claude Code and Obsidian Journaling is one of the highest-leverage habits for self-awareness and personal growth. But most people abandon it within weeks because it’s too time-consuming.
+What if your journal wrote itself?
+Not a generic AI summary — a personalized daily entry that pulls from your actual health data, messages, photos, and activities. An entry that captures what happened, why it mattered, and what patterns are emerging — with minimal effort from you.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+
+  <meta itemprop="name" content="How to Build an AI-Powered Daily Journal with Claude Code and Obsidian">
+  <meta itemprop="description" content="How to Build an AI-Powered Daily Journal with Claude Code and Obsidian Journaling is one of the highest-leverage habits for self-awareness and personal growth. But most people abandon it within weeks because it’s too time-consuming.
+What if your journal wrote itself?
+Not a generic AI summary — a personalized daily entry that pulls from your actual health data, messages, photos, and activities. An entry that captures what happened, why it mattered, and what patterns are emerging — with minimal effort from you.">
+  <meta itemprop="wordCount" content="1396">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to Build an AI-Powered Daily Journal with Claude Code and Obsidian">
+  <meta name="twitter:description" content="How to Build an AI-Powered Daily Journal with Claude Code and Obsidian Journaling is one of the highest-leverage habits for self-awareness and personal growth. But most people abandon it within weeks because it’s too time-consuming.
+What if your journal wrote itself?
+Not a generic AI summary — a personalized daily entry that pulls from your actual health data, messages, photos, and activities. An entry that captures what happened, why it mattered, and what patterns are emerging — with minimal effort from you.">
+
+      
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production is-page is-page page-03-ai-powered-daily-journal-automation">
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        PiOS — Personal Intelligence Operating System
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+
+  <article class="page-03-ai-powered-daily-journal-automation flex-l mw7 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Blogs
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">How to Build an AI-Powered Daily Journal with Claude Code and Obsidian</h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-100-l"><h1 id="how-to-build-an-ai-powered-daily-journal-with-claude-code-and-obsidian">How to Build an AI-Powered Daily Journal with Claude Code and Obsidian</h1>
+<p>Journaling is one of the highest-leverage habits for self-awareness and personal growth. But most people abandon it within weeks because it&rsquo;s too time-consuming.</p>
+<p>What if your journal wrote itself?</p>
+<p>Not a generic AI summary — a personalized daily entry that pulls from your actual health data, messages, photos, and activities. An entry that captures what happened, why it mattered, and what patterns are emerging — with minimal effort from you.</p>
+<p>This guide shows you how to build exactly that using Claude Code, Obsidian, and a few Python scripts.</p>
+<h2 id="what-an-ai-powered-journal-looks-like">What an AI-Powered Journal Looks Like</h2>
+<p>Here&rsquo;s a real example of an auto-generated daily entry:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>date: 2026-04-07
+</span></span><span style="display:flex;"><span>type: daily
+</span></span><span style="display:flex;"><span>mood_inferred: focused, slightly tired
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Monday, April 7, 2026
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Health Snapshot
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Sleep: 6h 48m (below your 7.5h target, 3rd short night this week)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Steps: 9,234 (good — exceeded 8k goal)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Resting HR: 62 bpm (normal range)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Sunlight: 45 min (target: 60 min — consider a lunch walk)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Day at a Glance
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Morning: Reviewed project proposals, responded to 3 client emails
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Afternoon: Deep work session on the dashboard redesign (2.5 hours)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Evening: Dinner with M. — discussed apartment renovation plans
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Key Decisions &amp; Thoughts
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Decided to postpone the API migration to next sprint (load testing
+</span></span><span style="display:flex;"><span>  showed current architecture handles projected traffic fine)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> M. wants to start renovation by May — need to finalize contractor
+</span></span><span style="display:flex;"><span>  by end of this week
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Patterns &amp; Alerts
+</span></span></span><span style="display:flex;"><span>⚠️ Sleep has been below target 3 of the last 5 nights. Last time
+</span></span><span style="display:flex;"><span>this pattern occurred (March 20-25), you reported increased anxiety
+</span></span><span style="display:flex;"><span>and reduced focus. Consider your evening routine.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Photos
+</span></span></span><span style="display:flex;"><span>![[photo-2026-04-07-lunch.jpg]]
+</span></span><span style="display:flex;"><span>Lunch at the new café on Zhongshan Road
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Tomorrow&#39;s Focus
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> Finalize contractor shortlist (renovation deadline)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> Continue dashboard redesign (blocked on design review after this)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> 30-min walk at lunch (sunlight deficit)
+</span></span></code></pre></div><p>Notice what&rsquo;s happening: the journal combines <strong>objective data</strong> (health metrics, photos, messages) with <strong>AI-generated insights</strong> (pattern detection, recommendations). You didn&rsquo;t have to write any of this. You might add a paragraph of personal reflection — that&rsquo;s the only manual input.</p>
+<h2 id="the-architecture">The Architecture</h2>
+<p>The system has three components:</p>
+<ol>
+<li><strong>Data collectors</strong> — Scripts that pull data from various sources</li>
+<li><strong>Journal engine</strong> — An AI agent that combines data into a coherent entry</li>
+<li><strong>Scheduler</strong> — Runs everything automatically on a daily schedule</li>
+</ol>
+<pre tabindex="0"><code>6:00 AM  →  Collectors run (health, messages, photos, calendar)
+6:30 AM  →  Journal engine reads collected data + last 7 days
+6:35 AM  →  AI generates today&#39;s journal entry
+6:36 AM  →  Entry saved to Obsidian vault
+7:00 AM  →  You open Obsidian and read your briefing
+</code></pre><h2 id="building-the-data-collectors">Building the Data Collectors</h2>
+<h3 id="collector-1-apple-health">Collector 1: Apple Health</h3>
+<p>Apple Health stores a wealth of data. The easiest way to access it programmatically is through the <strong>Health Auto Export</strong> app ($3.99, runs on your iPhone, exports to a local server or file).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># collector_health.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> date
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>EXPORT_DIR <span style="color:#f92672">=</span> Path<span style="color:#f92672">.</span>home() <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;health-export&#34;</span>
+</span></span><span style="display:flex;"><span>OUTPUT_DIR <span style="color:#f92672">=</span> Path<span style="color:#f92672">.</span>home() <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;vault&#34;</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;data&#34;</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;health&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">collect_today</span>():
+</span></span><span style="display:flex;"><span>    today <span style="color:#f92672">=</span> date<span style="color:#f92672">.</span>today()<span style="color:#f92672">.</span>isoformat()
+</span></span><span style="display:flex;"><span>    export_file <span style="color:#f92672">=</span> EXPORT_DIR <span style="color:#f92672">/</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>today<span style="color:#e6db74">}</span><span style="color:#e6db74">.json&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> export_file<span style="color:#f92672">.</span>exists():
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    data <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(export_file<span style="color:#f92672">.</span>read_text())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Extract key metrics</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;date&#34;</span>: today,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;sleep_hours&#34;</span>: round(data<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;sleep_duration_hours&#34;</span>, <span style="color:#ae81ff">0</span>), <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;sleep_deep_pct&#34;</span>: data<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;sleep_deep_percentage&#34;</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;steps&#34;</span>: data<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;step_count&#34;</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;resting_hr&#34;</span>: data<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;resting_heart_rate&#34;</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;active_energy_kcal&#34;</span>: data<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;active_energy&#34;</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;sunlight_minutes&#34;</span>: data<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;time_in_daylight&#34;</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><h3 id="collector-2-messages">Collector 2: Messages</h3>
+<p>For chat apps with local databases (WeChat on macOS, iMessage), you can read the SQLite database directly. For others, use export tools.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># collector_messages.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> sqlite3
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> date, datetime
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">collect_imessage_today</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Read today&#39;s iMessage conversations.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    db_path <span style="color:#f92672">=</span> Path<span style="color:#f92672">.</span>home() <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;Library&#34;</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;Messages&#34;</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;chat.db&#34;</span>
+</span></span><span style="display:flex;"><span>    conn <span style="color:#f92672">=</span> sqlite3<span style="color:#f92672">.</span>connect(str(db_path))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    today_start <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>combine(date<span style="color:#f92672">.</span>today(), datetime<span style="color:#f92672">.</span>min<span style="color:#f92672">.</span>time())
+</span></span><span style="display:flex;"><span>    timestamp <span style="color:#f92672">=</span> int(today_start<span style="color:#f92672">.</span>timestamp() <span style="color:#f92672">*</span> <span style="color:#ae81ff">1e9</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">978307200</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1e9</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    rows <span style="color:#f92672">=</span> conn<span style="color:#f92672">.</span>execute(<span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        SELECT h.id, m.text, m.is_from_me, m.date
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        FROM message m
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        JOIN handle h ON m.handle_id = h.ROWID
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        WHERE m.date &gt; ?
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        ORDER BY m.date
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>, (timestamp,))<span style="color:#f92672">.</span>fetchall()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Group by contact</span>
+</span></span><span style="display:flex;"><span>    conversations <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> contact, text, is_from_me, msg_date <span style="color:#f92672">in</span> rows:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> contact <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> conversations:
+</span></span><span style="display:flex;"><span>            conversations[contact] <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        sender <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Me&#34;</span> <span style="color:#66d9ef">if</span> is_from_me <span style="color:#66d9ef">else</span> contact
+</span></span><span style="display:flex;"><span>        conversations[contact]<span style="color:#f92672">.</span>append(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>sender<span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">{</span>text<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> conversations
+</span></span></code></pre></div><h3 id="collector-3-photos">Collector 3: Photos</h3>
+<p>If you use Immich (self-hosted photo management) or have photos syncing to a local directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># collector_photos.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> PIL.ExifTags <span style="color:#f92672">import</span> TAGS
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> date
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>PHOTO_DIR <span style="color:#f92672">=</span> Path<span style="color:#f92672">.</span>home() <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;Photos&#34;</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;Imports&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">collect_today_photos</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Find photos taken today with EXIF data.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    today <span style="color:#f92672">=</span> date<span style="color:#f92672">.</span>today()
+</span></span><span style="display:flex;"><span>    photos <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> img_path <span style="color:#f92672">in</span> PHOTO_DIR<span style="color:#f92672">.</span>glob(<span style="color:#e6db74">&#34;*.{jpg,jpeg,heic,png}&#34;</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> img_path<span style="color:#f92672">.</span>stat()<span style="color:#f92672">.</span>st_mtime <span style="color:#f92672">&gt;=</span> today_start_timestamp:
+</span></span><span style="display:flex;"><span>            exif <span style="color:#f92672">=</span> extract_exif(img_path)
+</span></span><span style="display:flex;"><span>            photos<span style="color:#f92672">.</span>append({
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;path&#34;</span>: str(img_path),
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;time&#34;</span>: exif<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;DateTime&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>),
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;location&#34;</span>: exif<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;GPSInfo&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>),
+</span></span><span style="display:flex;"><span>            })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> sorted(photos, key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> p: p[<span style="color:#e6db74">&#34;time&#34;</span>])
+</span></span></code></pre></div><h2 id="building-the-journal-engine">Building the Journal Engine</h2>
+<p>The journal engine is the AI agent that combines all collected data into a coherent entry.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># journal_engine.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> anthropic
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> date, timedelta
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>VAULT <span style="color:#f92672">=</span> Path<span style="color:#f92672">.</span>home() <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;vault&#34;</span>
+</span></span><span style="display:flex;"><span>client <span style="color:#f92672">=</span> anthropic<span style="color:#f92672">.</span>Anthropic()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_journal</span>():
+</span></span><span style="display:flex;"><span>    today <span style="color:#f92672">=</span> date<span style="color:#f92672">.</span>today()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 1. Gather today&#39;s data</span>
+</span></span><span style="display:flex;"><span>    health <span style="color:#f92672">=</span> load_json(VAULT <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;data&#34;</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;health&#34;</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>today<span style="color:#e6db74">}</span><span style="color:#e6db74">.json&#34;</span>)
+</span></span><span style="display:flex;"><span>    messages <span style="color:#f92672">=</span> load_json(VAULT <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;data&#34;</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;messages&#34;</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>today<span style="color:#e6db74">}</span><span style="color:#e6db74">.json&#34;</span>)
+</span></span><span style="display:flex;"><span>    photos <span style="color:#f92672">=</span> load_json(VAULT <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;data&#34;</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;photos&#34;</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>today<span style="color:#e6db74">}</span><span style="color:#e6db74">.json&#34;</span>)
+</span></span><span style="display:flex;"><span>    calendar <span style="color:#f92672">=</span> load_json(VAULT <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;data&#34;</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;calendar&#34;</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>today<span style="color:#e6db74">}</span><span style="color:#e6db74">.json&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 2. Load recent context (last 7 days of journals)</span>
+</span></span><span style="display:flex;"><span>    recent_journals <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">8</span>):
+</span></span><span style="display:flex;"><span>        d <span style="color:#f92672">=</span> today <span style="color:#f92672">-</span> timedelta(days<span style="color:#f92672">=</span>i)
+</span></span><span style="display:flex;"><span>        journal_path <span style="color:#f92672">=</span> VAULT <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;01-Daily&#34;</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>d<span style="color:#e6db74">}</span><span style="color:#e6db74">.md&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> journal_path<span style="color:#f92672">.</span>exists():
+</span></span><span style="display:flex;"><span>            recent_journals<span style="color:#f92672">.</span>append(journal_path<span style="color:#f92672">.</span>read_text())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 3. Build the prompt</span>
+</span></span><span style="display:flex;"><span>    prompt <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#34;&#34;Generate today&#39;s journal entry based on this data.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">## Today&#39;s Health Data
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{</span>format_health(health)<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">## Today&#39;s Conversations (summarized)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{</span>format_messages(messages)<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">## Today&#39;s Photos
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{</span>format_photos(photos)<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">## Calendar Events
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{</span>format_calendar(calendar)<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">## Recent Journal Entries (for pattern detection)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{</span>chr(<span style="color:#ae81ff">10</span>)<span style="color:#f92672">.</span>join(recent_journals[<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>:])<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">## Instructions
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Start with a health snapshot (compare to goals and recent trends)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Summarize the day&#39;s activities chronologically
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Extract key decisions and thoughts from conversations
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Detect patterns across the last 7 days (sleep, mood, productivity)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Flag any health alerts (3+ days below sleep target, unusual HR, etc.)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Suggest 3 focus items for tomorrow based on active projects and today&#39;s context
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Infer mood from the data (don&#39;t ask me, just infer)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Keep the tone personal but not overly cheerful
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Use Obsidian wiki-links for references to other notes
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    response <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>messages<span style="color:#f92672">.</span>create(
+</span></span><span style="display:flex;"><span>        model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;claude-sonnet-4-6&#34;</span>,
+</span></span><span style="display:flex;"><span>        max_tokens<span style="color:#f92672">=</span><span style="color:#ae81ff">2000</span>,
+</span></span><span style="display:flex;"><span>        messages<span style="color:#f92672">=</span>[{<span style="color:#e6db74">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>, <span style="color:#e6db74">&#34;content&#34;</span>: prompt}]
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    entry <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>content[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>text
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 4. Add frontmatter and save</span>
+</span></span><span style="display:flex;"><span>    output <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#34;&#34;---
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">date: </span><span style="color:#e6db74">{</span>today<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">type: daily
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">auto_generated: true
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">---
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{</span>entry<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    output_path <span style="color:#f92672">=</span> VAULT <span style="color:#f92672">/</span> <span style="color:#e6db74">&#34;01-Daily&#34;</span> <span style="color:#f92672">/</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>today<span style="color:#e6db74">}</span><span style="color:#e6db74">.md&#34;</span>
+</span></span><span style="display:flex;"><span>    output_path<span style="color:#f92672">.</span>write_text(output)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> output_path
+</span></span></code></pre></div><h2 id="scheduling-with-launchd-macos">Scheduling with launchd (macOS)</h2>
+<p>Create a launch agent that runs the full pipeline every morning:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- ~/Library/LaunchAgents/com.pios.daily-journal.plist --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;plist</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;1.0&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dict&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;key&gt;</span>Label<span style="color:#f92672">&lt;/key&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;string&gt;</span>com.pios.daily-journal<span style="color:#f92672">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;key&gt;</span>ProgramArguments<span style="color:#f92672">&lt;/key&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;array&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;string&gt;</span>/usr/bin/python3<span style="color:#f92672">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;string&gt;</span>/Users/you/scripts/run-daily-journal.sh<span style="color:#f92672">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/array&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;key&gt;</span>StartCalendarInterval<span style="color:#f92672">&lt;/key&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;dict&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;key&gt;</span>Hour<span style="color:#f92672">&lt;/key&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;integer&gt;</span>6<span style="color:#f92672">&lt;/integer&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;key&gt;</span>Minute<span style="color:#f92672">&lt;/key&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;integer&gt;</span>30<span style="color:#f92672">&lt;/integer&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/dict&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dict&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/plist&gt;</span>
+</span></span></code></pre></div><p>The shell script runs collectors first, then the engine:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># run-daily-journal.sh</span>
+</span></span><span style="display:flex;"><span>cd ~/scripts
+</span></span><span style="display:flex;"><span>python3 collector_health.py
+</span></span><span style="display:flex;"><span>python3 collector_messages.py
+</span></span><span style="display:flex;"><span>python3 collector_photos.py
+</span></span><span style="display:flex;"><span>python3 journal_engine.py
+</span></span></code></pre></div><h2 id="making-it-interactive-with-claude-code">Making It Interactive with Claude Code</h2>
+<p>The real power emerges when you combine automated journaling with interactive AI sessions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~/vault
+</span></span><span style="display:flex;"><span>claude <span style="color:#e6db74">&#34;Read my journal from the last week. What patterns do you see
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">in my sleep and productivity? Any concerns?&#34;</span>
+</span></span></code></pre></div><p>Because Claude Code can read your vault directly, it has access to weeks or months of structured data. It can spot trends that you&rsquo;d never notice by reading individual entries.</p>
+<h2 id="tips-for-long-term-success">Tips for Long-Term Success</h2>
+<ol>
+<li>
+<p><strong>Don&rsquo;t skip the reflection section</strong> — Auto-generated data is useful, but your own thoughts make the journal valuable. Even one sentence of reflection per day compounds over months.</p>
+</li>
+<li>
+<p><strong>Review weekly</strong> — Set a recurring reminder to read your week&rsquo;s journals. The AI catches patterns, but you need to decide what to do about them.</p>
+</li>
+<li>
+<p><strong>Start simple</strong> — Even without any data collectors, you can use Claude Code to generate a journal template each morning. Add automation gradually.</p>
+</li>
+<li>
+<p><strong>Keep raw data</strong> — Store the raw JSON exports alongside the generated Markdown. You&rsquo;ll want to re-process old data when you improve your journal engine.</p>
+</li>
+<li>
+<p><strong>Version control</strong> — Put your vault in git. Track every change. You&rsquo;ll thank yourself when you want to see how your system (and your life) evolved over time.</p>
+</li>
+</ol>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><strong>PiOS</strong> — Open-source implementation with a full daily journal engine: <a href="https://github.com/pios-ai/pios">github.com/pios-ai/pios</a></li>
+<li><strong>Obsidian</strong> — <a href="https://obsidian.md">obsidian.md</a></li>
+<li><strong>Health Auto Export</strong> — iOS app for Apple Health data export</li>
+<li><strong>Immich</strong> — Self-hosted photo management: <a href="https://immich.app">immich.app</a></li>
+</ul>
+<hr>
+<p><em>Part of the PiOS documentation series. PiOS is an open-source Personal Intelligence Operating System for building AI systems that understand your life.</em></p>
+<ul class="pa0">
+  
+</ul>
+
+      
+    </div></article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://pios-docs.github.io/" >
+    &copy;  PiOS — Personal Intelligence Operating System 2026 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
